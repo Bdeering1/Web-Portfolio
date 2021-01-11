@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  font-family: "Cabin";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#navbar {
+  position: fixed;
+  width: 100vw;
+  height: 75px;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #dddddd;
+  background-color: #303035;
+}
+
+#navbar .nav-link {
+  padding-right: 20px;
+  font-size: 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+#welcome-section {
+  width: 100vw;
+  height: 100vh;
+  min-height: 300px;
+  top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #0a0a0a;
+  background-color: #1d3557;
+}
+
+#welcome-section #welcome-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#welcome-section #welcome-title {
+  font-size: 50px;
+}
+
+#welcome-section #welcome-subtitle {
+  margin-top: -30px;
+  font-size: 30px;
+  font-family: "Pacifico";
+}
+
+#projects {
+  width: 100vw;
+  min-height: 300px;
+  padding: 10vh 0vw 10vh 0vw;
+  text-align: center;
+  color: #0a0a0a;
+  background-color: #1d573f;
+}
+
+#projects #projects-title {
+  height: 15vh;
+  width: 100vw;
+  font-size: 35px;
+}
+
+#projects #project-blocks {
+  min-height: 65vh;
+  width: 90vw;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2vw;
+}
+
+#projects #project-blocks .project-tile {
+  border-radius: 4px;
+  max-height: 40vh;
+  min-height: 30vh;
+  overflow: hidden;
+  font-size: 20px;
+  -webkit-box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
+  background-color: #1d3557;
+}
+
+#projects #project-blocks .project-tile .project-img {
+  width: 100%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: orange;
+}
+
+@media (max-width: 728px) {
+  #projects #project-blocks {
+    width: 76vw;
+    grid-gap: 2vh;
+  }
+  #projects #projects-title {
+    font-size: 25px;
+    height: none;
+  }
+}
+
+#profile-links {
+  width: 100vw;
+  height: 140px;
+  padding-top: 10px;
+  text-align: center;
+  color: #dddddd;
+  background-color: #303035;
+}
+
+#profile-links #profile-links-title {
+  font-size: 25px;
+}
+
+#profile-links .profile-link {
+  margin: 8px 50px 0 50px;
+  padding: 2px;
+  display: inline-block;
+  -webkit-animation-name: reverse-hover-link;
+          animation-name: reverse-hover-link;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  font-size: 20px;
+}
+
+#profile-links .profile-link .profile-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+#profile-links .profile-link:hover {
+  -webkit-animation-name: hover-link;
+          animation-name: hover-link;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes hover-link {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes hover-link {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes reverse-hover-link {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes reverse-hover-link {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
