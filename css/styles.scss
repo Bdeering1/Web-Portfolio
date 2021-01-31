@@ -1,16 +1,37 @@
-$header-footer-color: #303035;
-$background-color-1: #1d3557;
-$background-color-2: #1d573f;
+$header-footer-color: rgba(228, 228, 228, 0.3);
+$background-color-1: #ffffff;
+$background-color-2: rgba(228, 228, 228, 0.2);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
+$font-family-1: "Leckerli One";
+$font-family-2: "Poiret One";
 
 body {
   margin: 0;
   padding: 0;
   overscroll-behavior: none;
 
-  font-family: "Cabin";
+  color: $font-color-1;
+  font-family: $font-family-2;
+  background-color: $background-color-1;
 }
+
+#img-container {
+  height: 200%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  overflow: hidden;
+
+  #backdrop {
+    width: 1920px;
+    position: relative;
+    transform: translateY(-100px);
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -18,7 +39,7 @@ a {
 
 #navbar {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 75px;
   top: 0px;
   left: 0px;
@@ -28,62 +49,84 @@ a {
   justify-content: flex-end;
   align-items: center;
 
-  color: $font-color-2;
-  background-color: $header-footer-color;
+  #nav-links {
+    width: 240px;
+    margin-right: 40px;
+    padding: 15px;
+    border-radius: 5px;
 
-  .nav-link {
-    padding-right: 20px;
-    font-size: 20px;
-    color: inherit;
-    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+
+    background-color: $header-footer-color;
+
+    .nav-link {
+      font-size: 25px;
+      text-decoration: none;
+    }
   }
 }
 
-#welcome-section {
-  width: 100vw;
+#home {
+  width: 100%;
   height: 100vh;
-  min-height: 300px;
   top: 0px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: $font-color-1;
-  background-color: $background-color-1;
+
+  /*#welcome-splash {
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    z-index: -1;
+  }*/
 
   #welcome-div {
+    border-radius: 15px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  #welcome-title {
-    font-size: 50px;
-  }
-  #welcome-subtitle {
-    margin-top: -30px;
-    font-size: 30px;
-    font-family: "Pacifico";
+    align-items: flex-end;
+
+    //background-color: orange
+
+    #welcome-title {
+      margin: 0;
+
+      font-size: 100px;
+      font-family: $font-family-1;
+    }
+
+    #welcome-subtitle {
+      margin: 0;
+
+      font-size: 30px;
+      font-family: $font-family-2;
+      color: $font-color-2;
+    }
   }
 }
 
 #projects {
-  width: 100vw;
+  width: 100%;
   min-height: 300px;
   padding: 10vh 0vw 10vh 0vw;
 
   text-align: center;
-  color: $font-color-1;
-  background-color: $background-color-2;
 
   #projects-title {
     height: 15vh;
-    width: 100vw;
-    font-size: 35px;
+    width: 100%;
+    font-size: 70px;
+    font-family: $font-family-1;
   }
+
   #project-blocks {
     min-height: 65vh;
-    width: 90vw;
+    width: 90%;
     max-width: 1280px;
     margin: 0 auto;
 
@@ -99,77 +142,127 @@ a {
 
       font-size: 20px;
       box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
-      background-color: $background-color-1;
+      background-color: $background-color-2;
 
       .project-img {
         width: 100%;
         height: 80%;
         object-fit: cover;
-
-        background-color: orange;
       }
-    }
-  }
-  @media (max-width: 728px) {
-    #project-blocks {
-      width: 76vw;
-      grid-gap: 2vh;
-    }
-    #projects-title {
-      font-size: 25px;
-      height: none;
     }
   }
 }
 
 #profile-links {
-  width: 100vw;
-  height: 140px;
-  padding-top: 10px;
+  display: grid;
 
-  text-align: center;
-  color: $font-color-2;
-  background-color: $header-footer-color;
+  #profile-links-div {
+    min-height: 140px;
+    padding: 10px;
+    margin: 0 auto 40px auto;
 
-  #profile-links-title {
-      font-size: 25px;
-  }
-
-  .profile-link {
-    margin: 8px 50px 0 50px;
-    padding: 2px;
-
+    border-radius: 10px;
     display: inline-block;
-    animation-name: reverse-hover-link;
-    animation-duration: 0.4s;
 
-    font-size: 20px;
+    text-align: center;
+    color: $font-color-2;
+    background-color: $header-footer-color;
 
-    .profile-img {
-      width: 20px;
-      height: 20px;
-      margin-right: 5px;
+    #profile-links-title {
+      font-size: 25px;
+    }
+
+    .profile-link {
+      margin: 8px 50px 0 50px;
+      padding: 2px;
+
+      display: inline-block;
+      animation-name: reverse-hover-link;
+      animation-duration: 0.4s;
+
+      font-size: 20px;
+
+      .profile-img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
     }
   }
+
   .profile-link:hover {
     animation-name: hover-link;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
   }
+
   @keyframes hover-link {
     from {
       transform: scale(1);
     }
+
     to {
       transform: scale(1.2);
     }
   }
+
   @keyframes reverse-hover-link {
     from {
       transform: scale(1.2);
     }
+
     to {
       transform: scale(1);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #img-container {
+    height: 228%;
+
+  }
+
+  #navbar {
+    top: -8px;
+
+    #nav-links {
+      width: 100%;
+      margin-right: 0;
+      padding: 15px 80px 15px 80px;
+      border-radius: 0;
+    }
+  }
+
+  #home {
+    #welcome-div {
+      #welcome-title {
+        font-size: 70px;
+      }
+
+      #welcome-subtitle {
+        font-size: 25px;
+      }
+
+    }
+  }
+
+  #projects {
+    #project-blocks {
+      width: 76%;
+      grid-gap: 2vh;
+    }
+
+    #projects-title {
+      font-size: 40px;
+      height: none;
+    }
+  }
+
+  #profile-links {
+
+    #profile-links-div {
+      width: 90%;
     }
   }
 }
