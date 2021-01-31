@@ -1,12 +1,12 @@
 # My Web Portfolio
-### Digital portfolio displaying a few of my notable web projects
+Digital portfolio displaying a few of my notable web projects
 
-## Projects include:
+#### Projects include:
 
 Calculator App
 Random Quote Generator
 Drum Machine
 
 
-### Credits:
+#### Credits:
 Cover photo taken from unsplash.com, by Alan Labisch
