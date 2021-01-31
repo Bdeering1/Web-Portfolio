@@ -1,6 +1,6 @@
-$header-footer-color: rgba(228, 228, 228, 0.3);
+$header-footer-color: rgba(228, 228, 228, 0.2);
 $background-color-1: #ffffff;
-$background-color-2: rgba(228, 228, 228, 0.2);
+$background-color-2: rgba(228, 228, 228, 0.5);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
 $font-family-1: "Leckerli One";
@@ -102,6 +102,7 @@ a {
     font-size: 70px;
     font-family: $font-family-2;
     color: $font-color-2;
+    text-shadow: 0.5px 0.5px $font-color-1;
   }
 
   #project-blocks {
@@ -116,8 +117,8 @@ a {
 
     .project-tile {
       border-radius: 4px;
-      max-height: 400px;
-      min-height: 400px;
+      max-height: 475px;
+      min-height: 475px;
       overflow: hidden;
 
       animation-name: reverse-hover-tile;
@@ -127,7 +128,7 @@ a {
       background-color: $background-color-2;
 
       .project-title {
-        font-size: 22px;
+        font-size: 30px;
         margin: 0;
 
         position: relative;
@@ -191,7 +192,7 @@ a {
 
     .profile-link {
       margin: 8px 50px 0 50px;
-      padding: 2px;
+      padding: 15px;
 
       display: inline-block;
       animation-name: reverse-hover-link;
@@ -200,8 +201,8 @@ a {
       font-size: 20px;
 
       .profile-img {
-        width: 20px;
-        height: 20px;
+        width: 35px;
+        height: 35px;
         margin-right: 5px;
       }
     }

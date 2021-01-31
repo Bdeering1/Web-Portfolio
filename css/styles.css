@@ -41,7 +41,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: rgba(228, 228, 228, 0.3);
+  background-color: rgba(228, 228, 228, 0.2);
 }
 
 #navbar #nav-links .nav-link {
@@ -111,6 +111,7 @@ a {
   font-size: 70px;
   font-family: "Poiret One";
   color: #dddddd;
+  text-shadow: 0.5px 0.5px #0a0a0a;
 }
 
 #projects #project-blocks {
@@ -127,8 +128,8 @@ a {
 
 #projects #project-blocks .project-tile {
   border-radius: 4px;
-  max-height: 400px;
-  min-height: 400px;
+  max-height: 475px;
+  min-height: 475px;
   overflow: hidden;
   -webkit-animation-name: reverse-hover-tile;
           animation-name: reverse-hover-tile;
@@ -136,11 +137,11 @@ a {
           animation-duration: 0.5s;
   -webkit-box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
           box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
-  background-color: rgba(228, 228, 228, 0.2);
+  background-color: rgba(228, 228, 228, 0.5);
 }
 
 #projects #project-blocks .project-tile .project-title {
-  font-size: 22px;
+  font-size: 30px;
   margin: 0;
   position: relative;
   top: 10%;
@@ -221,7 +222,7 @@ a {
   border-radius: 10px;
   display: inline-block;
   text-align: center;
-  background-color: rgba(228, 228, 228, 0.3);
+  background-color: rgba(228, 228, 228, 0.2);
 }
 
 #profile-links #profile-links-div #profile-links-title {
@@ -230,7 +231,7 @@ a {
 
 #profile-links #profile-links-div .profile-link {
   margin: 8px 50px 0 50px;
-  padding: 2px;
+  padding: 15px;
   display: inline-block;
   -webkit-animation-name: reverse-hover-link;
           animation-name: reverse-hover-link;
@@ -240,8 +241,8 @@ a {
 }
 
 #profile-links #profile-links-div .profile-link .profile-img {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   margin-right: 5px;
 }
 
