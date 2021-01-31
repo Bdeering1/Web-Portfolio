@@ -206,6 +206,8 @@ a {
 }
 
 @media (min-height: 1280px) {
+  $header-footer-color: rgba(228, 228, 228, 1);
+
   #img-container {
     height: 228%;
 
@@ -213,12 +215,14 @@ a {
 
   #navbar {
     top: -8px;
+    height: 150px;
 
     #nav-links {
       width: 100%;
       margin-right: 0;
       padding: 15px 80px 15px 80px;
       border-radius: 0;
+      font-size: 50px;
     }
   }
 
@@ -239,6 +243,19 @@ a {
       border-radius: 0;
       width: 100%;
       margin: 0;
+
+      #profile-links-title {
+        font-size: 50px;
+      }
+
+      .profile-link {
+        font-size: 50px;
+      }
+
+      .profile-img {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 }
