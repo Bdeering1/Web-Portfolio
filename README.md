@@ -3,9 +3,9 @@ Digital portfolio displaying a few of my notable web projects
 
 #### Projects include:
 
-Calculator App
-Random Quote Generator
-Drum Machine
+Calculator App  
+Random Quote Generator  
+Drum Machine  
 
 
 #### Credits:
