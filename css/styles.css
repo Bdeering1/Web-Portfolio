@@ -106,10 +106,11 @@ a {
 }
 
 #projects #projects-title {
-  height: 15vh;
+  height: 20vh;
   width: 100%;
   font-size: 70px;
-  font-family: "Leckerli One";
+  font-family: "Poiret One";
+  color: #dddddd;
 }
 
 #projects #project-blocks {
@@ -129,6 +130,10 @@ a {
   max-height: 400px;
   min-height: 400px;
   overflow: hidden;
+  -webkit-animation-name: reverse-hover-tile;
+          animation-name: reverse-hover-tile;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
           box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
   background-color: rgba(228, 228, 228, 0.2);
@@ -149,6 +154,59 @@ a {
   max-height: 80%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#projects #project-blocks .project-tile:hover {
+  -webkit-animation-name: hover-tile;
+          animation-name: hover-tile;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes hover-tile {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@keyframes hover-tile {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@-webkit-keyframes reverse-hover-tile {
+  from {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes reverse-hover-tile {
+  from {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 #profile-links {
@@ -177,8 +235,8 @@ a {
   display: inline-block;
   -webkit-animation-name: reverse-hover-link;
           animation-name: reverse-hover-link;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
   font-size: 20px;
 }
 
@@ -188,11 +246,11 @@ a {
   margin-right: 5px;
 }
 
-#profile-links .profile-link:hover {
+#profile-links #profile-links-div .profile-link:hover {
   -webkit-animation-name: hover-link;
           animation-name: hover-link;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -203,8 +261,8 @@ a {
             transform: scale(1);
   }
   to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -214,15 +272,15 @@ a {
             transform: scale(1);
   }
   to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
 @-webkit-keyframes reverse-hover-link {
   from {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   to {
     -webkit-transform: scale(1);
@@ -232,8 +290,8 @@ a {
 
 @keyframes reverse-hover-link {
   from {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   to {
     -webkit-transform: scale(1);
