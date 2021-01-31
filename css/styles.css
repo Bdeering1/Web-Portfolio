@@ -111,7 +111,6 @@ a {
   font-size: 70px;
   font-family: "Poiret One";
   color: #dddddd;
-  text-shadow: 0.5px 0.5px #0a0a0a;
 }
 
 #projects #project-blocks {
@@ -226,7 +225,7 @@ a {
 }
 
 #profile-links #profile-links-div #profile-links-title {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 #profile-links #profile-links-div .profile-link {
