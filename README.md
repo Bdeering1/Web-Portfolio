@@ -1,4 +1,4 @@
-# My Web Portfolio
+# Web Portfolio
 Digital portfolio displaying a few of my notable web projects
 
 #### Projects include:
