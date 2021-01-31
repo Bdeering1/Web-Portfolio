@@ -183,7 +183,6 @@ a {
     display: inline-block;
 
     text-align: center;
-    color: $font-color-2;
     background-color: $header-footer-color;
 
     #profile-links-title {
@@ -251,9 +250,13 @@ a {
     #nav-links {
       width: 100%;
       margin-right: 0;
-      padding: 15px 80px 15px 80px;
       border-radius: 0;
-      font-size: 60px;
+
+      justify-content: space-evenly;
+
+      .nav-link {
+        font-size: 60px;
+      }
     }
   }
 
@@ -274,24 +277,25 @@ a {
       border-radius: 0;
       width: 100%;
       margin: 0;
+      padding: 0;
       background-color: rgba(228, 228, 228, 1);
 
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      align-items: center;
 
       #profile-links-title {
         display: none;
       }
 
       .profile-link {
+        margin: 3px;
         font-size: 60px;
-        position: absolute;
-        margin: auto 50px auto 50px;
-      }
 
-      .profile-img {
-        width: 60px;
-        height: 60px;
+        .profile-img {
+          width: 60px;
+          height: 60px;
+        }
       }
     }
   }
