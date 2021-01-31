@@ -1,5 +1,5 @@
 # Web Portfolio
-Hi I'm Bryn, and this is my digital portfolio where I show off a few of my notable web projects. Please click the link that takes you to my GitHub pages site.
+Hi I'm Bryn, and this is my portfolio where I show off a few of my notable web projects. Please click the link that takes you to my GitHub pages site.
 
 #### Projects include:
 
