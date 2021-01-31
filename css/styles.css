@@ -171,8 +171,8 @@ a {
             transform: scale(1);
   }
   to {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -182,15 +182,15 @@ a {
             transform: scale(1);
   }
   to {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
 @-webkit-keyframes reverse-hover-tile {
   from {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   to {
     -webkit-transform: scale(1);
@@ -200,8 +200,8 @@ a {
 
 @keyframes reverse-hover-tile {
   from {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   to {
     -webkit-transform: scale(1);
