@@ -58,7 +58,6 @@ a {
   top: 0px;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -77,7 +76,6 @@ a {
 
     #welcome-title {
       margin: 0;
-      min-width: 700px;
 
       align-self: center;
       text-align: center;
@@ -114,21 +112,22 @@ a {
   width: 100%;
   padding: 5vh 0 15vh 0;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  text-shadow: 0.5px 0.5px 0px $font-color-1;
 
   #projects-title {
     height: 20vh;
-    width: 100%;
     font-size: 80px;
     font-family: $font-family-2;
     color: $font-color-2;
+    text-shadow: 0.5px 0.5px 0px $font-color-1;
   }
 
   #project-blocks {
     width: 90%;
     max-width: 1600px;
-    margin: 0 auto;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -197,8 +196,8 @@ a {
 
   #profile-links-div {
     min-height: 140px;
-    padding: 10px;
-    margin: 10vh auto 10vh auto;
+    padding: 10px 0;
+    margin: 10vh auto;
 
     border-radius: 10px;
     display: inline-block;
@@ -211,8 +210,8 @@ a {
     }
 
     .profile-link {
-      margin: 8px 50px 0 50px;
-      padding: 15px;
+      margin: 0 50px;
+      padding: 0 5px;
 
       display: inline-block;
       animation-name: reverse-hover-link;
@@ -220,10 +219,11 @@ a {
 
       font-size: 50px;
 
+      background-color: orange;
+
       .profile-img {
         width: 45px;
         height: 45px;
-        margin-right: 5px;
       }
     }
 
@@ -255,7 +255,39 @@ a {
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+#img-container {
+  height: auto;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+
+  overflow: hidden;
+
+  #backdrop {
+    min-width: 100%;
+    max-width: 1920px;
+    min-height: 103vh;
+    position: relative;
+    transform: translateY(-100px);
+
+    filter: contrast(1.1) saturate(95%);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  #home {
+    #welcome-div {
+      #welcome-subtitle {
+        align-self: center;
+      }
+    }
+  }
+}
+
+/* ---------------------- MOBILE UI -------------------------- */
+@media only screen and (max-device-width: 768px) and (min-resolution: 2dppx) and (orientation: portrait) {
 
   #img-container {
     min-height: 228%;
@@ -276,7 +308,7 @@ a {
       justify-content: space-evenly;
 
       .nav-link {
-        font-size: 60px;
+        font-size: 32px;
       }
     }
   }
@@ -286,8 +318,11 @@ a {
       transform: translateY(+10%);
 
       #welcome-title {
-        min-width: 640px;
-        font-size: 100px;
+        font-size: 56px;
+      }
+
+      #welcome-subtitle {
+        align-self: center;
       }
     }
   }
@@ -295,6 +330,7 @@ a {
   #projects {
     #projects-title {
       height: none;
+      font-size: 56px;
       text-shadow: 1px 1px 0px $font-color-1;
     }
 
@@ -310,7 +346,10 @@ a {
   }
 
   #profile-links {
+    width: 100%;
     padding-top: 0;
+
+    display: none;
 
     #profile-links-div {
       border-radius: 0;
@@ -330,13 +369,13 @@ a {
 
       .profile-link {
         margin: 3px;
-        font-size: 60px;
+        font-size: 32px;
 
         animation-name: none;
 
         .profile-img {
-          width: 80px;
-          height: 80px;
+          width: 70px;
+          height: 70px;
         }
       }
 
@@ -344,24 +383,5 @@ a {
         animation-name: none;
       }
     }
-  }
-}
-
-#img-container {
-  height: auto;
-  min-width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-
-  overflow: hidden;
-
-  #backdrop {
-    min-width: 100%;
-    max-width: 1920px;
-    position: relative;
-    transform: translateY(-100px);
-
-    filter: contrast(1.1) saturate(95%);
   }
 }

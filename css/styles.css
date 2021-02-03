@@ -56,10 +56,6 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -87,7 +83,6 @@ a {
 
 #home #welcome-div #welcome-title {
   margin: 0;
-  min-width: 700px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -134,22 +129,30 @@ a {
 #projects {
   width: 100%;
   padding: 5vh 0 15vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
-  text-shadow: 0.5px 0.5px 0px #0a0a0a;
 }
 
 #projects #projects-title {
   height: 20vh;
-  width: 100%;
   font-size: 80px;
   font-family: "Poiret One";
   color: #dddddd;
+  text-shadow: 0.5px 0.5px 0px #0a0a0a;
 }
 
 #projects #project-blocks {
   width: 90%;
   max-width: 1600px;
-  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(380px, 1fr))[auto-fit];
@@ -249,8 +252,8 @@ a {
 
 #profile-links #profile-links-div {
   min-height: 140px;
-  padding: 10px;
-  margin: 10vh auto 10vh auto;
+  padding: 10px 0;
+  margin: 10vh auto;
   border-radius: 10px;
   display: inline-block;
   text-align: center;
@@ -262,20 +265,20 @@ a {
 }
 
 #profile-links #profile-links-div .profile-link {
-  margin: 8px 50px 0 50px;
-  padding: 15px;
+  margin: 0 50px;
+  padding: 0 5px;
   display: inline-block;
   -webkit-animation-name: reverse-hover-link;
           animation-name: reverse-hover-link;
   -webkit-animation-duration: 0.2s;
           animation-duration: 0.2s;
   font-size: 50px;
+  background-color: orange;
 }
 
 #profile-links #profile-links-div .profile-link .profile-img {
   width: 45px;
   height: 45px;
-  margin-right: 5px;
 }
 
 #profile-links #profile-links-div .profile-link:hover {
@@ -331,7 +334,36 @@ a {
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+#img-container {
+  height: auto;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#img-container #backdrop {
+  min-width: 100%;
+  max-width: 1920px;
+  min-height: 103vh;
+  position: relative;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-filter: contrast(1.1) saturate(95%);
+          filter: contrast(1.1) saturate(95%);
+}
+
+@media only screen and (max-width: 1000px) {
+  #home #welcome-div #welcome-subtitle {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+/* ---------------------- MOBILE UI -------------------------- */
+@media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait), only screen and (max-device-width: 768px) and (min-resolution: 2dppx) and (orientation: portrait) {
   #img-container {
     min-height: 228%;
   }
@@ -350,18 +382,23 @@ a {
             justify-content: space-evenly;
   }
   #navbar #nav-links .nav-link {
-    font-size: 60px;
+    font-size: 32px;
   }
   #home #welcome-div {
     -webkit-transform: translateY(10%);
             transform: translateY(10%);
   }
   #home #welcome-div #welcome-title {
-    min-width: 640px;
-    font-size: 100px;
+    font-size: 56px;
+  }
+  #home #welcome-div #welcome-subtitle {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   #projects #projects-title {
     height: none;
+    font-size: 56px;
     text-shadow: 1px 1px 0px #0a0a0a;
   }
   #projects #project-blocks .project-tile {
@@ -373,7 +410,9 @@ a {
             animation-name: none;
   }
   #profile-links {
+    width: 100%;
     padding-top: 0;
+    display: none;
   }
   #profile-links #profile-links-div {
     border-radius: 0;
@@ -397,36 +436,17 @@ a {
   }
   #profile-links #profile-links-div .profile-link {
     margin: 3px;
-    font-size: 60px;
+    font-size: 32px;
     -webkit-animation-name: none;
             animation-name: none;
   }
   #profile-links #profile-links-div .profile-link .profile-img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
   #profile-links #profile-links-div .profile-link:hover {
     -webkit-animation-name: none;
             animation-name: none;
   }
-}
-
-#img-container {
-  height: auto;
-  min-width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  overflow: hidden;
-}
-
-#img-container #backdrop {
-  min-width: 100%;
-  max-width: 1920px;
-  position: relative;
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
-  -webkit-filter: contrast(1.1) saturate(95%);
-          filter: contrast(1.1) saturate(95%);
 }
 /*# sourceMappingURL=styles.css.map */
