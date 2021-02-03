@@ -46,8 +46,7 @@ a {
     background-color: $header-color;
 
     .nav-link {
-      font-size: 28px;
-      text-decoration: none;
+      font-size: 32px;
     }
   }
 }
@@ -316,11 +315,12 @@ a {
       transform: translateY(+10%);
 
       #welcome-title {
-        font-size: 56px;
+        font-size: 48px;
       }
 
       #welcome-subtitle {
         align-self: center;
+        font-size: 24px;
       }
     }
   }
@@ -328,15 +328,20 @@ a {
   #projects {
     #projects-title {
       height: none;
-      font-size: 56px;
+      font-size: 48px;
       text-shadow: 1px 1px 0px $font-color-1;
     }
 
     #project-blocks {
       grid-template-columns: 1fr;
 
+
       .project-tile {
         animation-name: none;
+
+        .project-title {
+          font-size: 24px;
+        }
       }
 
       .project-tile:hover {
@@ -347,6 +352,7 @@ a {
 
   #profile-links {
     width: 100%;
+    min-height: 100px;
     padding-top: 0;
 
     display: block;
@@ -364,7 +370,7 @@ a {
       align-items: center;
 
       #profile-links-title {
-        display: block;
+        display: none;
       }
 
       .profile-link {

@@ -45,8 +45,7 @@ a {
 }
 
 #navbar #nav-links .nav-link {
-  font-size: 28px;
-  text-decoration: none;
+  font-size: 32px;
 }
 
 #home {
@@ -388,16 +387,17 @@ a {
             transform: translateY(10%);
   }
   #home #welcome-div #welcome-title {
-    font-size: 56px;
+    font-size: 48px;
   }
   #home #welcome-div #welcome-subtitle {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    font-size: 24px;
   }
   #projects #projects-title {
     height: none;
-    font-size: 56px;
+    font-size: 48px;
     text-shadow: 1px 1px 0px #0a0a0a;
   }
   #projects #project-blocks {
@@ -408,12 +408,16 @@ a {
     -webkit-animation-name: none;
             animation-name: none;
   }
+  #projects #project-blocks .project-tile .project-title {
+    font-size: 24px;
+  }
   #projects #project-blocks .project-tile:hover {
     -webkit-animation-name: none;
             animation-name: none;
   }
   #profile-links {
     width: 100%;
+    min-height: 100px;
     padding-top: 0;
     display: block;
   }
@@ -435,7 +439,7 @@ a {
             align-items: center;
   }
   #profile-links #profile-links-div #profile-links-title {
-    display: block;
+    display: none;
   }
   #profile-links #profile-links-div .profile-link {
     margin: 3px;
