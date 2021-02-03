@@ -331,7 +331,7 @@ a {
   }
 }
 
-@media (max-height: 1280px) and (max-width: 1100px) {
+@media (min-height: 1280px) and (max-width: 1100px) {
   #img-container {
     min-height: 228%;
   }
