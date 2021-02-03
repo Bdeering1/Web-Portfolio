@@ -331,7 +331,7 @@ a {
   }
 }
 
-@media only screen and (min-height: 1280px) and (max-width: 1200px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   #img-container {
     min-height: 228%;
   }
