@@ -331,7 +331,7 @@ a {
   }
 }
 
-@media (min-height: 1280px) and (max-width: 1200px) {
+@media only screen and (min-height: 1280px) and (max-width: 1200px) {
   #img-container {
     min-height: 228%;
   }
