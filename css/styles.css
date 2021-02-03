@@ -133,7 +133,7 @@ a {
 
 #projects {
   width: 100%;
-  padding: 10vh 0vw 10vh 0vw;
+  padding: 5vh 0 15vh 0;
   text-align: center;
   text-shadow: 0.5px 0.5px 0px #0a0a0a;
 }
@@ -147,7 +147,6 @@ a {
 }
 
 #projects #project-blocks {
-  min-height: 65vh;
   width: 90%;
   max-width: 1600px;
   margin: 0 auto;
@@ -243,6 +242,7 @@ a {
 }
 
 #profile-links {
+  padding-top: 10vh;
   display: -ms-grid;
   display: grid;
 }
@@ -331,7 +331,7 @@ a {
   }
 }
 
-@media (min-height: 1280px) and (max-width: 900px) {
+@media (max-height: 1280px) and (max-width: 1100px) {
   #img-container {
     min-height: 228%;
   }
@@ -356,6 +356,10 @@ a {
     -webkit-transform: translateY(10%);
             transform: translateY(10%);
   }
+  #home #welcome-div #welcome-title {
+    min-width: 640px;
+    font-size: 100px;
+  }
   #projects #projects-title {
     height: none;
     text-shadow: 1px 1px 0px #0a0a0a;
@@ -367,6 +371,9 @@ a {
   #projects #project-blocks .project-tile:hover {
     -webkit-animation-name: none;
             animation-name: none;
+  }
+  #profile-links {
+    padding-top: 0;
   }
   #profile-links #profile-links-div {
     border-radius: 0;
