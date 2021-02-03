@@ -369,7 +369,7 @@ a {
   #navbar {
     top: 0;
     margin: 0;
-    height: 150px;
+    height: 100px;
     background-color: #e4e4e4;
   }
   #navbar #nav-links {
@@ -400,6 +400,10 @@ a {
     font-size: 56px;
     text-shadow: 1px 1px 0px #0a0a0a;
   }
+  #projects #project-blocks {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
   #projects #project-blocks .project-tile {
     -webkit-animation-name: none;
             animation-name: none;
@@ -411,7 +415,7 @@ a {
   #profile-links {
     width: 100%;
     padding-top: 0;
-    display: none;
+    display: block;
   }
   #profile-links #profile-links-div {
     border-radius: 0;
@@ -431,7 +435,7 @@ a {
             align-items: center;
   }
   #profile-links #profile-links-div #profile-links-title {
-    display: none;
+    display: block;
   }
   #profile-links #profile-links-div .profile-link {
     margin: 3px;

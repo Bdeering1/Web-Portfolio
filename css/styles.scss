@@ -294,7 +294,7 @@ a {
   #navbar {
     top: 0;
     margin: 0;
-    height: 150px;
+    height: 100px;
 
     background-color: rgba(228, 228, 228, 1);
 
@@ -333,6 +333,8 @@ a {
     }
 
     #project-blocks {
+      grid-template-columns: 1fr;
+
       .project-tile {
         animation-name: none;
       }
@@ -347,7 +349,7 @@ a {
     width: 100%;
     padding-top: 0;
 
-    display: none;
+    display: block;
 
     #profile-links-div {
       border-radius: 0;
@@ -362,7 +364,7 @@ a {
       align-items: center;
 
       #profile-links-title {
-        display: none;
+        display: block;
       }
 
       .profile-link {
