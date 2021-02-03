@@ -293,7 +293,7 @@ a {
   #navbar {
     top: 0;
     margin: 0;
-    height: 100px;
+    height: 80px;
 
     background-color: rgba(228, 228, 228, 1);
 
@@ -305,7 +305,7 @@ a {
       justify-content: space-evenly;
 
       .nav-link {
-        font-size: 32px;
+        font-size: 24px;
       }
     }
   }
@@ -352,7 +352,7 @@ a {
 
   #profile-links {
     width: 100%;
-    min-height: 100px;
+    min-height: 80px;
     padding-top: 0;
 
     display: block;
@@ -374,8 +374,7 @@ a {
       }
 
       .profile-link {
-        margin: 3px;
-        font-size: 32px;
+        font-size: 24px;
 
         animation-name: none;
 
