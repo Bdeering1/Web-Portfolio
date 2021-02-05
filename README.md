@@ -4,9 +4,9 @@ To view please click the link in the 'About' section, this will take you to my G
 
 #### Projects include:
 
+To Do List  
+Drum Machine  
 Calculator App  
 Random Quote Generator  
-Drum Machine  
-  
   
 *Cover photo taken from unsplash.com, by Alan Labisch
