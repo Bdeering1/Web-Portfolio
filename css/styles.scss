@@ -79,7 +79,7 @@ a {
       align-self: center;
       text-align: center;
 
-      font-size: 110px;
+      font-size: 110px; //calc(5vw + 2rem);
       font-family: $font-family-1;
     }
 
@@ -264,7 +264,7 @@ a {
   #backdrop {
     min-width: 100%;
     max-width: 1920px;
-    min-height: 103vh;
+    min-height: calc(100vh + 100px);
     position: relative;
     transform: translateY(-100px);
 
@@ -287,7 +287,7 @@ a {
 @media only screen and (max-device-width: 768px) and (min-resolution: 2dppx) and (orientation: portrait) {
 
   #img-container {
-    min-height: 228%;
+    min-height: 228%; //remove ?
   }
 
   #navbar {
