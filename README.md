@@ -5,6 +5,7 @@ To view please click the link in the 'About' section, this will take you to my G
 #### Projects include:
 
 To Do List  
+Visual Sorting App  
 Drum Machine  
 Calculator App  
 Random Quote Generator  
