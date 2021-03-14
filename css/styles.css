@@ -1,7 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -23,9 +19,7 @@ a {
   top: 0px;
   left: 0px;
   z-index: 99;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -54,7 +48,7 @@ a {
 
 #home {
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,13 +59,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  /*   background-color: orange;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    //display: none;
-  }
- */
 }
 
 #home #welcome-div {
@@ -84,8 +71,6 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  -webkit-transform: translateY(-25%);
-          transform: translateY(-25%);
   -webkit-animation: fadeInTitle 2s ease-in;
           animation: fadeInTitle 2s ease-in;
 }
@@ -96,21 +81,18 @@ a {
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
-  font-size: 110px;
+  font-size: calc(9vw + 2rem);
   font-family: "Leckerli One";
+  opacity: 0.85;
 }
 
 #home #welcome-div #welcome-subtitle {
   margin: 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  font-size: 32px;
+  font-size: calc(2vw + 1rem);
   font-family: "Poiret One";
   color: #dddddd;
-}
-
-#home .scroll-block {
-  height: 200vh;
 }
 
 @-webkit-keyframes fadeInTitle {
@@ -438,10 +420,9 @@ a {
   #profile-links #profile-links-div {
     border-radius: 0;
     width: 100%;
-    height: 80px;
     margin: 0;
     padding: 0;
-    background-color: #e4e4e4;
+    background-color: rgba(228, 228, 228, 0.4);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -457,7 +438,6 @@ a {
   }
   #profile-links #profile-links-div .profile-link {
     margin: 0;
-    font-size: 24px;
     -webkit-animation-name: none;
             animation-name: none;
   }
