@@ -6,10 +6,15 @@ function parallax() {
     }
 }
 
-window.addEventListener("scroll", function () {
-    parallax();
-});
+window.addEventListener("scroll", parallax);
 
-window.addEventListener("onload", function () {
-
-});
+/* window.onload = () => {
+    var lastScrollTop = window.pageYOffset;
+    let home = document.getElementById("home");
+    home.addEventListener("wheel", (event) => {
+        if (event.wheelDelta < 0 || event.deltaY > 0) {
+            document.getElementById("projects").scrollIntoView(true);
+        } else {
+        }
+    }, false);
+}; */

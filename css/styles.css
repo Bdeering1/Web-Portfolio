@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -50,7 +54,7 @@ a {
 
 #home {
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,6 +65,13 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  /*   background-color: orange;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    //display: none;
+  }
+ */
 }
 
 #home #welcome-div {
@@ -75,9 +86,8 @@ a {
   position: relative;
   -webkit-transform: translateY(-25%);
           transform: translateY(-25%);
-  /*animation-name: fadeInTitle;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;*/
+  -webkit-animation: fadeInTitle 2s ease-in;
+          animation: fadeInTitle 2s ease-in;
 }
 
 #home #welcome-div #welcome-title {
@@ -97,6 +107,10 @@ a {
   font-size: 32px;
   font-family: "Poiret One";
   color: #dddddd;
+}
+
+#home .scroll-block {
+  height: 200vh;
 }
 
 @-webkit-keyframes fadeInTitle {
