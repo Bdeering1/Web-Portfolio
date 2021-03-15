@@ -14,18 +14,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret One">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="portfolio.js"></script>
+    <script defer src="portfolio.js"></script>
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="nav-links">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#profile-links" class="nav-link">Links</a>
-        </div>
-    </nav>
-
     <main>
         <section id="home">
             <div id="welcome-div">
@@ -36,27 +28,17 @@
 
         <section id="projects">
             <h1 id="projects-title">Projects</h1>
-            <div id="project-blocks">
-                <a class="project-tile" href="https://bdeering1.github.io/To-Do-List/" target="_blank">
-                    <img class="project-img" src="resources/To Do List.png" alt="" />
-                    <h2 class="project-title">To Do List</h2>
-                </a>
-                <a class="project-tile" href="https://bdeering1.github.io/Visual-Sorting-App" target="_blank">
-                    <img class="project-img" src="resources/Visual Sorting.png" alt="" />
-                    <h2 class="project-title">Sorting Visualizer</h2>
-                </a>
-                <a class="project-tile" href="https://codepen.io/bdeering1/full/QWKxemq" target="_blank">
-                    <img class="project-img" src="resources/Calculator.png" alt="" />
-                    <h2 class="project-title">Calculator</h2>
-                </a>
-                <a class="project-tile" href="https://codepen.io/bdeering1/full/OJRZWEy" target="_blank">
-                    <img class="project-img" src="resources/Drum Machine.png" alt="" />
-                    <h2 class="project-title">Drum Machine</h2>
-                </a>
-                <a class="project-tile" href="https://codepen.io/bdeering1/full/ExgEXmp" target="_blank">
-                    <img class="project-img" src="resources/Quote Generator.png" alt="" />
-                    <h2 class="project-title">Quote Generator</h2>
-                </a>
+            <div id="project-grid" data-project-grid>
+                <template data-project-template>
+                    <a class="project-tile" href="" target="_blank">
+                        <div class="text-content">
+                            <h2 class="project-title"></h2>
+                            <p class="project-desc"></p>
+                            <p class="project-more"></p>
+                        </div>
+                        <img class="project-img" src="" alt="" />
+                    </a>
+                </template>
             </div>
         </section>
 

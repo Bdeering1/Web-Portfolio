@@ -1,12 +1,17 @@
 $header-color: rgba(228, 228, 228, 0.2);
-$footer-color: rgba(228, 228, 228, 0.6);
 $background-color-1: #e5ebf0;
-$background-color-2: rgba(228, 228, 228, 0.5);
+$background-color-2: rgba(228, 228, 228, 0.85);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
 $font-family-1: "Leckerli One";
 $font-family-2: "Poiret One";
 
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -23,69 +28,30 @@ a {
   text-decoration: none;
 }
 
-#navbar {
-  position: fixed;
-  width: 100%;
-  height: 75px;
-  top: 0px;
-  left: 0px;
-  z-index: 99;
-
-  display: none;//flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  #nav-links {
-    width: 300px;
-    margin-right: 40px;
-    padding: 15px;
-    border-radius: 5px;
-
-    display: flex;
-    justify-content: space-between;
-
-    background-color: $header-color;
-
-    .nav-link {
-      font-size: 32px;
-    }
-  }
-}
 #home {
   width: 100%;
   height: 100vh;
   top: 0px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   #welcome-div {
-    border-radius: 15px;
-
     display: flex;
     flex-direction: column;
-
     position: relative;
-    //transform: translateY(-25%);
-
     animation: fadeInTitle 2s ease-in;
 
     #welcome-title {
       margin: 0;
-
       align-self: center;
       text-align: center;
-
       font-size: calc(9vw + 2rem);
       font-family: $font-family-1;
-
-      opacity: 0.85;
+      opacity: 0.9;
     }
-
     #welcome-subtitle {
       margin: 0;
-
       align-self: flex-end;
 
       font-size: calc(2vw + 1rem);
@@ -107,118 +73,105 @@ a {
 
 #projects {
   width: 100%;
-  padding: 5vh 0 15vh 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
   #projects-title {
-    height: 20vh;
-    font-size: 80px;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    font-size: calc(5vw + 1rem);
     font-family: $font-family-2;
     color: $font-color-2;
     text-shadow: 0.5px 0.5px 0px $font-color-1;
   }
-
-  #project-blocks {
+  #project-grid {
     width: 90%;
-    max-width: 1600px;
-
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    grid-gap: 5vmax;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 7.5vmax;
 
     .project-tile {
-      border-radius: 4px;
-      max-height: 450px;
-      min-height: 450px;
+      grid-column: 1/4;
+      border-radius: 6px;
+      height: 300px;
+      min-height: 300px;
       overflow: hidden;
 
-      animation-name: reverse-hover-tile;
-      animation-duration: 300ms;
-
-      box-shadow: 4px 4px 17px -2px rgba(0, 0, 0, 0.75);
+      transition: transform 1000ms, box-shadow 1000ms;
       background-color: $background-color-2;
 
-      .project-title {
-        font-size: 32px;
-        margin: 0;
+      .text-content {
+        height: 100%;
+        width: 60%;
+        float: right;
+        display: flex;
+        flex-direction: column;
 
-        position: relative;
-        top: 10%;
-        transform: translateY(-50%);
+        .project-title {
+          font-size: 32px;
+          text-shadow: 1px 1px $background-color-2;
+        }
+        .project-desc, .project-more {
+          text-align: left;
+          margin: 0;
+          font-size: 1.4em;
+          padding: 0 1em;
+          line-height: 1.3em;
+          white-space: pre-wrap;
+        }
       }
-
       .project-img {
-        width: 100%;
-        min-height: 80%;
-        max-height: 80%;
+        width: 40%;
+        min-height: 100%;
+        max-height: 100%;
         object-fit: cover;
       }
-    }
-
-    .project-tile:hover {
-      animation-name: hover-tile;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
-    }
-
-    @keyframes hover-tile {
-      from {
-        transform: scale(1);
+      &:hover {
+        transform: translateX(3%) scale(1.05);
+        box-shadow: 0 10px 17px -2px rgba(0, 0, 0, 0.4);
       }
-
-      to {
-        transform: scale(1.05);
-      }
-    }
-
-    @keyframes reverse-hover-tile {
-      from {
-        transform: scale(1.05);
-      }
-
-      to {
-        transform: scale(1);
+      &:nth-child(2n) {
+        grid-column: 3/6;
+        .text-content {
+          float: left;
+        }
+        &:hover {
+          transform: translateX(-3%) scale(1.05);
+        }
       }
     }
   }
 }
 
 #profile-links {
-  padding-top: 10vh;
   display: grid;
 
   #profile-links-div {
     min-height: 140px;
-    padding: 10px 0;
-    margin: 10vh auto;
-
-    border-radius: 10px;
-    display: inline-block;
-
+    margin: 20vh 20vw 10vh 20vw;
+    border-radius: 6px;
     text-align: center;
-    background-color: $footer-color;
+    background-color: $background-color-2;
+    font-size: 42px;
+    padding: 0.5em 0;
 
     #profile-links-title {
-      font-size: 32px;
+      margin: 0 0 1em 0;
+      font-size: inherit;
     }
-
     .profile-link {
-      margin: 0 50px;
-      padding: 0 5px;
-
+      margin: 0 3vw;
+      padding: 5px;
       display: inline-block;
       animation-name: reverse-hover-link;
       animation-duration: 0.2s;
-
-      font-size: 50px;
+      font-size: 1rem;
 
       .profile-img {
-        width: 45px;
-        height: 45px;
+        width: 60px;
+        height: 60px;
       }
     }
 
@@ -232,17 +185,14 @@ a {
       from {
         transform: scale(1);
       }
-
       to {
         transform: scale(1.1);
       }
     }
-
     @keyframes reverse-hover-link {
       from {
         transform: scale(1.1);
       }
-
       to {
         transform: scale(1);
       }
@@ -256,7 +206,6 @@ a {
   position: fixed;
   top: 0;
   z-index: -1;
-
   overflow: hidden;
 
   #backdrop {
@@ -265,47 +214,48 @@ a {
     min-height: calc(100vh + 100px);
     position: relative;
     transform: translateY(-100px);
-
     filter: contrast(1.1) saturate(95%);
   }
 }
 
-@media only screen and (max-width: 1000px) {
+/* ---------------------- MEDIUM SIZED UI -------------------------- */
+@media (max-width: 1250px) {
+  #projects #project-grid {
+    grid-row-gap: 10vmax;
 
-  #home {
-    #welcome-div {
-      #welcome-subtitle {
-        align-self: center;
+    .project-tile {
+      grid-column: 1/6;
+      .text-content {
+        width: 50%;
+      }
+      .project-img {
+        width: 50%;
+      }
+      &:hover {
+        transform: /*translateY(-2%)*/ scale(1.02) !important;
+      }
+      &:nth-child(2n) {
+        grid-column: 1/6;
       }
     }
   }
+  #profile-links #profile-links-div {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 }
+@media (max-width: 850px) {
+  #projects #project-grid .project-tile .text-content .project-more{
+    display: none;
+  }
+}
+
 
 /* ---------------------- MOBILE UI -------------------------- */
 @media only screen and (max-device-width: 768px) and (min-resolution: 2dppx) and (orientation: portrait) {
 
   #img-container {
     min-height: 228%; //remove ?
-  }
-
-  #navbar {
-    top: 0;
-    margin: 0;
-    height: 80px;
-
-    background-color: rgba(228, 228, 228, 1);
-
-    #nav-links {
-      width: 100%;
-      margin-right: 0;
-      border-radius: 0;
-
-      justify-content: space-evenly;
-
-      .nav-link {
-        font-size: 24px;
-      }
-    }
   }
 
   #home {
@@ -315,7 +265,6 @@ a {
       #welcome-title {
         font-size: 48px;
       }
-
       #welcome-subtitle {
         align-self: center;
         font-size: 24px;
@@ -329,21 +278,31 @@ a {
       font-size: 48px;
       text-shadow: 1px 1px 0px $font-color-1;
     }
-
-    #project-blocks {
+    #project-grid {
       grid-template-columns: 1fr;
 
-
       .project-tile {
-        animation-name: none;
+        grid-column: 1/6;
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
 
-        .project-title {
-          font-size: 24px;
+        .project-img {
+          width: 100%;
+          min-height: 60%;
+          max-height: 60%;
         }
-      }
-
-      .project-tile:hover {
-        animation-name: none;
+        .text-content {
+          height: fit-content;
+          width: 100%;
+          order: 2;
+          .project-title {
+            font-size: 24px;
+          }
+        }
+        &:hover {
+          transform: none !important;
+        }
       }
     }
   }
@@ -351,8 +310,7 @@ a {
   #profile-links {
     width: 100%;
     min-height: 80px;
-    padding-top: 0;
-
+    padding-top: 10vh;
     display: block;
 
     #profile-links-div {
@@ -360,7 +318,6 @@ a {
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: rgba(228, 228, 228, 0.4);
 
       display: flex;
       justify-content: space-evenly;
@@ -372,8 +329,6 @@ a {
 
       .profile-link {
         margin: 0;
-        //font-size: 24px;
-
         animation-name: none;
 
         .profile-img {
