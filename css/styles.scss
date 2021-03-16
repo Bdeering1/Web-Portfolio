@@ -255,7 +255,7 @@ a {
 @media only screen and (max-device-width: 768px) and (min-resolution: 2dppx) and (orientation: portrait) {
 
   #img-container {
-    min-height: 228%; //remove ?
+    min-height: 228%;
   }
 
   #home {
@@ -332,8 +332,8 @@ a {
         animation-name: none;
 
         .profile-img {
-          width: 70px;
-          height: 70px;
+          width: 60px;
+          height: 60px;
         }
       }
 

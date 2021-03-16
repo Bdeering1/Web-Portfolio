@@ -61,7 +61,7 @@ window.onscroll = function(e) {
     this.oldScroll = this.scrollY;
 }
 
-//Backgrounsd parallax effect
+//Background parallax effect
 window.addEventListener("scroll", parallax);
 
 function parallax() {

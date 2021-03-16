@@ -436,8 +436,8 @@ a {
             animation-name: none;
   }
   #profile-links #profile-links-div .profile-link .profile-img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
   #profile-links #profile-links-div .profile-link:hover {
     -webkit-animation-name: none;
