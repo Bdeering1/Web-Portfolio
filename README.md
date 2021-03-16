@@ -1,13 +1,5 @@
 # Web Portfolio
-Hi I'm Bryn, and this is my portfolio. This is where I show off a few of my notable web projects.
-To view please click the link in the 'About' section, this will take you to my GitHub pages site.
-
-#### Projects include:
-
-To Do List  
-Visual Sorting App  
-Drum Machine  
-Calculator App  
-Random Quote Generator  
+Hey I'm Bryn, I'm an aspiring front end web developer and this is my portfolio! This is where I show off a few of my notable projects. To view please click the link in the 'About' section, which will take you to my GitHub pages site.  
   
-*Cover photo taken from unsplash.com, by Alan Labisch
+  
+*Cover photo taken from unsplash.com, by Alan Labisch  
