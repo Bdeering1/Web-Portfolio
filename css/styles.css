@@ -44,8 +44,8 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  -webkit-animation: fadeInTitle 2s ease-in;
-          animation: fadeInTitle 2s ease-in;
+  -webkit-transform: translateY(calc(calc(2.5vw + 1rem) * -1/2));
+          transform: translateY(calc(calc(2.5vw + 1rem) * -1/2));
 }
 
 #home #welcome-div #welcome-title {
@@ -56,38 +56,97 @@ a {
   text-align: center;
   font-size: calc(9vw + 2rem);
   font-family: "Leckerli One";
-  opacity: 0.9;
+  -webkit-animation: fadeInTitle 3000ms linear 1000ms;
+          animation: fadeInTitle 3000ms linear 1000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 1;
+  will-change: transform;
 }
 
 #home #welcome-div #welcome-subtitle {
   margin: 0;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  font-size: calc(2vw + 1rem);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: calc(2.5vw + 1rem);
   font-family: "Poiret One";
   color: #dddddd;
+  -webkit-animation: fadeInSubtitle 2000ms linear 5000ms;
+          animation: fadeInSubtitle 2000ms linear 5000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+  will-change: filter, transform;
 }
 
 @-webkit-keyframes fadeInTitle {
-  from {
+  0% {
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 0.9;
+  }
+}
+
+@-webkit-keyframes fadeInSubtitle {
+  0% {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
     -webkit-filter: blur(5px);
             filter: blur(5px);
     opacity: 0;
   }
-  to {
+  80% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     -webkit-filter: blur(0);
             filter: blur(0);
     opacity: 1;
   }
 }
 
-@keyframes fadeInTitle {
-  from {
+@keyframes fadeInSubtitle {
+  0% {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
     -webkit-filter: blur(5px);
             filter: blur(5px);
     opacity: 0;
   }
-  to {
+  80% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     -webkit-filter: blur(0);
             filter: blur(0);
     opacity: 1;
@@ -223,10 +282,10 @@ a {
   margin: 0 3vw;
   padding: 5px;
   display: inline-block;
-  -webkit-animation-name: reverse-hover-link;
-          animation-name: reverse-hover-link;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
   font-size: 1rem;
 }
 
@@ -236,56 +295,8 @@ a {
 }
 
 #profile-links #profile-links-div .profile-link:hover {
-  -webkit-animation-name: hover-link;
-          animation-name: hover-link;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes hover-link {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  to {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
-@keyframes hover-link {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  to {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
-@-webkit-keyframes reverse-hover-link {
-  from {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes reverse-hover-link {
-  from {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #img-container {
