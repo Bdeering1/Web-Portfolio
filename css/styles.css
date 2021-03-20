@@ -56,8 +56,8 @@ a {
   text-align: center;
   font-size: calc(9vw + 2rem);
   font-family: "Leckerli One";
-  -webkit-animation: fadeInTitle 3000ms linear 1000ms;
-          animation: fadeInTitle 3000ms linear 1000ms;
+  -webkit-animation: fadeInTitle 2000ms linear 1000ms;
+          animation: fadeInTitle 2000ms linear 1000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
@@ -73,8 +73,8 @@ a {
   font-size: calc(2.5vw + 1rem);
   font-family: "Poiret One";
   color: #dddddd;
-  -webkit-animation: fadeInSubtitle 2000ms linear 5000ms;
-          animation: fadeInSubtitle 2000ms linear 5000ms;
+  -webkit-animation: fadeInSubtitle 1500ms linear 3200ms;
+          animation: fadeInSubtitle 1500ms linear 3200ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;

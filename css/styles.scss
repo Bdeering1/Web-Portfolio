@@ -49,7 +49,7 @@ a {
       text-align: center;
       font-size: calc(9vw + 2rem);
       font-family: $font-family-1;
-      animation: fadeInTitle 3000ms linear 1000ms;
+      animation: fadeInTitle 2000ms linear 1000ms;
       animation-fill-mode: forwards;
       opacity: 0;
       z-index: 1;
@@ -63,7 +63,7 @@ a {
       font-size: $subtitle-size;
       font-family: $font-family-2;
       color: $font-color-2;
-      animation: fadeInSubtitle 2000ms linear 5000ms;
+      animation: fadeInSubtitle 1500ms linear 3200ms;
       animation-fill-mode: forwards;
       opacity: 0;
       will-change: filter, transform;
