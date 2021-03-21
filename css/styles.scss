@@ -45,10 +45,9 @@ a {
 
     #welcome-title {
       margin: 0;
-      align-self: center;
-      text-align: center;
-      font-size: calc(9vw + 2rem);
+      font-size: calc(8.5vw + 2rem);
       font-family: $font-family-1;
+      font-weight: 400;
       animation: fadeInTitle 2000ms linear 1000ms;
       animation-fill-mode: forwards;
       opacity: 0;

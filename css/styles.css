@@ -50,12 +50,9 @@ a {
 
 #home #welcome-div #welcome-title {
   margin: 0;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-  font-size: calc(9vw + 2rem);
+  font-size: calc(8.5vw + 2rem);
   font-family: "Leckerli One";
+  font-weight: 400;
   -webkit-animation: fadeInTitle 2000ms linear 1000ms;
           animation: fadeInTitle 2000ms linear 1000ms;
   -webkit-animation-fill-mode: forwards;
