@@ -53,7 +53,7 @@ window.onscroll = function(e) {
     if (this.oldScroll <= this.scrollY && !this.scrolled && window.pageYOffset < 100 && window.innerWidth > 850) {
         this.scrolled = true;
         window.scroll({
-            top: findPos(document.getElementById("projects")),
+            top: findPos(document.getElementById("about")),
             left: 0,
             behavior: 'smooth'
         })

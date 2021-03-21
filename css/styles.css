@@ -12,7 +12,6 @@ body {
   overscroll-behavior: none;
   color: #0a0a0a;
   font-family: "Poiret One";
-  background-color: #e5ebf0;
 }
 
 a {
@@ -21,9 +20,8 @@ a {
 }
 
 #home {
-  width: 100%;
-  height: 100vh;
-  top: 0px;
+  height: 110vh;
+  padding-bottom: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +33,7 @@ a {
           justify-content: center;
 }
 
-#home #welcome-div {
+#home #title-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,21 +46,21 @@ a {
           transform: translateY(calc(calc(2.5vw + 1rem) * -1/2));
 }
 
-#home #welcome-div #welcome-title {
+#home #title-div #welcome-title {
   margin: 0;
   font-size: calc(8.5vw + 2rem);
   font-family: "Leckerli One";
   font-weight: 400;
-  -webkit-animation: fadeInTitle 2000ms linear 1000ms;
-          animation: fadeInTitle 2000ms linear 1000ms;
+  -webkit-animation: fadeInTitle 2000ms linear 500ms;
+          animation: fadeInTitle 2000ms linear 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
   z-index: 1;
-  will-change: transform;
+  will-change: filter, transform;
 }
 
-#home #welcome-div #welcome-subtitle {
+#home #title-div #welcome-subtitle {
   margin: 0;
   position: absolute;
   top: 100%;
@@ -70,8 +68,8 @@ a {
   font-size: calc(2.5vw + 1rem);
   font-family: "Poiret One";
   color: #dddddd;
-  -webkit-animation: fadeInSubtitle 1500ms linear 3200ms;
-          animation: fadeInSubtitle 1500ms linear 3200ms;
+  -webkit-animation: fadeInSubtitle 1500ms linear 2200ms;
+          animation: fadeInSubtitle 1500ms linear 2200ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
@@ -150,8 +148,9 @@ a {
   }
 }
 
-#projects {
-  width: 100%;
+.portfolio-section {
+  padding-top: 10vh;
+  padding-bottom: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,14 +161,38 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
 }
 
-#projects #projects-title {
-  margin-top: 10vh;
+.section-title {
+  margin-top: 0;
   margin-bottom: 20vh;
   font-size: calc(5vw + 1rem);
   font-family: "Poiret One";
+}
+
+#about {
+  background-color: white;
+}
+
+#about #about-content {
+  width: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#about #about-content .about-col {
+  height: 400px;
+  background-color: orange;
+}
+
+#projects {
+  text-align: center;
+}
+
+#projects .projects-title {
   color: #dddddd;
   text-shadow: 0.5px 0.5px 0px #0a0a0a;
 }
@@ -262,7 +285,7 @@ a {
 
 #profile-links #profile-links-div {
   min-height: 140px;
-  margin: 20vh 20vw 10vh 20vw;
+  margin: 0 20vw 10vh 20vw;
   border-radius: 6px;
   text-align: center;
   background-color: rgba(228, 228, 228, 0.85);
@@ -358,23 +381,18 @@ a {
   #img-container {
     min-height: 228%;
   }
-  #home #welcome-div {
+  #home #title-div {
     -webkit-transform: translateY(10%);
             transform: translateY(10%);
   }
-  #home #welcome-div #welcome-title {
+  #home #title-div #welcome-title {
     font-size: 48px;
   }
-  #home #welcome-div #welcome-subtitle {
+  #home #title-div #welcome-subtitle {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
     font-size: 24px;
-  }
-  #projects #projects-title {
-    height: none;
-    font-size: 48px;
-    text-shadow: 1px 1px 0px #0a0a0a;
   }
   #projects #project-grid {
     -ms-grid-columns: 1fr;

@@ -20,7 +20,6 @@ body {
 
   color: $font-color-1;
   font-family: $font-family-2;
-  background-color: $background-color-1;
 }
 
 a {
@@ -29,14 +28,13 @@ a {
 }
 
 #home {
-  width: 100%;
-  height: 100vh;
-  top: 0px;
+  height: 110vh;
+  padding-bottom: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  #welcome-div {
+  #title-div {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -48,11 +46,11 @@ a {
       font-size: calc(8.5vw + 2rem);
       font-family: $font-family-1;
       font-weight: 400;
-      animation: fadeInTitle 2000ms linear 1000ms;
+      animation: fadeInTitle 2000ms linear 500ms;
       animation-fill-mode: forwards;
       opacity: 0;
       z-index: 1;
-      will-change: transform;
+      will-change: filter, transform;
     }
     #welcome-subtitle {
       margin: 0;
@@ -62,7 +60,7 @@ a {
       font-size: $subtitle-size;
       font-family: $font-family-2;
       color: $font-color-2;
-      animation: fadeInSubtitle 1500ms linear 3200ms;
+      animation: fadeInSubtitle 1500ms linear 2200ms;
       animation-fill-mode: forwards;
       opacity: 0;
       will-change: filter, transform;
@@ -98,21 +96,45 @@ a {
   }
 }
 
-#projects {
-  width: 100%;
+.portfolio-section {
+  padding-top: 10vh;
+  padding-bottom: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 20vh;
+  font-size: calc(5vw + 1rem);
+  font-family: $font-family-2;
+}
+
+#about  {
+  background-color: white;
+
+  #about-content {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    .about-col {
+      height: 400px;
+      background-color: orange;
+    }
+  }
+}
+
+#projects {
   text-align: center;
 
-  #projects-title {
-    margin-top: 10vh;
-    margin-bottom: 20vh;
-    font-size: calc(5vw + 1rem);
-    font-family: $font-family-2;
+  .projects-title {
     color: $font-color-2;
     text-shadow: 0.5px 0.5px 0px $font-color-1;
   }
+
   #project-grid {
     width: 90%;
     display: grid;
@@ -177,7 +199,7 @@ a {
 
   #profile-links-div {
     min-height: 140px;
-    margin: 20vh 20vw 10vh 20vw;
+    margin: 0 20vw 10vh 20vw;
     border-radius: 6px;
     text-align: center;
     background-color: $background-color-2;
@@ -208,6 +230,7 @@ a {
 }
 
 #img-container {
+  //display: none;
   height: auto;
   min-width: 100%;
   position: fixed;
@@ -266,7 +289,7 @@ a {
   }
 
   #home {
-    #welcome-div {
+    #title-div {
       transform: translateY(+10%);
 
       #welcome-title {
@@ -279,12 +302,9 @@ a {
     }
   }
 
+  
+
   #projects {
-    #projects-title {
-      height: none;
-      font-size: 48px;
-      text-shadow: 1px 1px 0px $font-color-1;
-    }
     #project-grid {
       grid-template-columns: 1fr;
 
