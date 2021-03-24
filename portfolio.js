@@ -6,28 +6,28 @@ const projects = [
         link: "https://bdeering1.github.io/Visual-Sorting-App",
         image: "resources/Visual Sorting.png",
         title: "Visual Sorting App",
-        desc: "Sorting algorithm learning tool (React and Redux)\n\n",
+        desc: "Sorting algorithm learning tool (React and Redux)",
         more: "• Fully responsive and cross browser compatible\n• Modular and scalable design"
     },
     {
         link: "https://bdeering1.github.io/To-Do-List/",
         image: "resources/To Do List.png",
         title: "To Do List",
-        desc: "Personal organization tool (Javascript and SASS)\n\n",
+        desc: "Personal organization tool (Javascript and SASS)",
         more: "• event listeners, DOM manipulation, and browser storage\n• css custom properties, pseudo elements, layouts"
     },
     {
         link: "https://codepen.io/bdeering1/full/QWKxemq",
         image: "resources/Calculator.png",
         title: "Calculator",
-        desc: "Virtual calculator app (React and SASS)\n\n",
+        desc: "Virtual calculator app (React and SASS)",
         more: "• responsize design\n• component functions and state manipulation"
     },
     {
         link: "https://codepen.io/bdeering1/full/OJRZWEy",
         image: "resources/Drum Machine.png",
         title: "Drum Machine",
-        desc: "Virtual drum machine (React and Bootstrap 4)\n\n",
+        desc: "Virtual drum machine (React and Bootstrap 4)",
         more: "• lifecycle methods, ES6 functionality\n• bootstrap integration"
     }
 ]

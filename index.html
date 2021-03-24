@@ -18,28 +18,28 @@
 </head>
 
 <body>
-    <main>
-        <header id="home">
-            <div id="title-div">
-                <h1 id="welcome-title">Bryn Deering</h1>
-                <h2 id="welcome-subtitle">web portfolio</h2>
-            </div>
-        </header>
+    <header id="home">
+        <div id="title-div">
+            <h1 id="welcome-title">Bryn Deering</h1>
+            <h2 id="welcome-subtitle">web portfolio</h2>
+        </div>
+    </header>
         
+    <main>
         <section class="portfolio-section" id="about">
 <!--             <svg height="200" width="100vw">
                 <polygon points="0,0 0,200 1500,200"
                 style="fill:black;" />
             </svg> -->
-            <h3 class="section-title about-title">About</h3>
+            <h3 class="section-header about-title">About</h3>
             <div id="about-content">
-                <div class="about-col col-1">
-                    <h4>Bio</h4>
-                    <p>Hey I'm Bryn! A passionate web developer who loves front end projects especially those involving React. I am currently working a few personal projects in order to improve my proficiency with front end technologies, and I'm aspiring to work in full stack!</p>
+                <div class="about-col text-block col-1">
+                    <h4 class="block-header">Bio</h4>
+                    <p class="block-content">Hey I'm Bryn! A passionate web developer who loves front end projects especially those involving React. I am currently working a few personal projects in order to improve my proficiency with front end technologies, and I'm aspiring to work in full stack!</p>
                 </div>
-                <div class="about-col col-2">
-                    <h4>Skills</h4>
-                    <p>•JavaScript
+                <div class="about-col text-block col-2">
+                    <h4 class="block-header">Skills</h4>
+                    <p class="block-content">•JavaScript
                         •HTML/CSS
                         •Python
                         •Java
@@ -53,9 +53,9 @@
                         •Algorithm Design and Analysis
                     </p>
                 </div>
-                <div class="about-col col-3">
-                    <h4>Certifications</h4>
-                    <p>•JavaScript Algorithms and Data Structures (12/2020) FreeCodeCamp
+                <div class="about-col text-block col-3">
+                    <h4 class="block-header">Certifications</h4>
+                    <p class="block-content">•JavaScript Algorithms and Data Structures (12/2020) FreeCodeCamp
                         •Front End Libraries (01/2021) FreeCodeCamp
                         •Responsive Web Design (12/2020) FreeCodeCamp
                         •Python Essential Training (01/2021)
@@ -65,33 +65,34 @@
         </section>
 
         <section class="portfolio-section" id="projects">
-            <h3 class="section-title projects-title">Projects</h1>
+            <h3 class="section-header projects-title">Projects</h1>
             <div id="project-grid" data-project-grid>
                 <template data-project-template>
-                    <a class="project-tile" href="" target="_blank">
-                        <article class="project-text">
-                            <h4 class="project-title"></h4>
-                            <p class="project-desc"></p>
-                            <p class="project-features"></p>
+                    <a class="project-tile link" href="" target="_blank">
+                        <article class="project-text text-block">
+                            <h4 class="block-header project-title"></h4>
+                            <p class="project-desc block-content"></p>
+                            <p class="project-features block-content"></p>
                         </article>
                         <img class="project-img" src="" alt="" />
                     </a>
                 </template>
             </div>
         </section>
-
-        <footer id="profile-links">
-            <div id="profile-links-div">
-                <h1 id="profile-links-title">Contact Me</h1>
-                <a class="profile-link" id="profile-link" target="_blank" href="https://github.com/Bdeering1"><img
-                        class="profile-img" src="resources/Github Icon Black.png" alt=""></a>
-                <a class="profile-link" target="_blank" href="https://www.linkedin.com/in/bryn-deering-172388197/"><img
-                        class="profile-img" src="resources/LinkedIn Icon Black.png" alt=""></a>
-                <a class="profile-link" target="_blank" href="mailto:bdeering@uoguelph.ca"><img class="profile-img"
-                        src="resources/Email Icon Black.png" alt=""></a>
-            </div>
-        </footer>
     </main>
+
+    <footer id="profile-links">
+        <div id="profile-links-div">
+            <h3 id="profile-links-title">Contact Me</h3>
+            <a class="link profile-link" id="profile-link" target="_blank" href="https://github.com/Bdeering1"><img
+                    class="profile-img" src="resources/Github Icon Black.png" alt=""></a>
+            <a class="link profile-link" target="_blank" href="https://www.linkedin.com/in/bryn-deering-172388197/"><img
+                    class="profile-img" src="resources/LinkedIn Icon Black.png" alt=""></a>
+            <a class="link profile-link" target="_blank" href="mailto:bdeering@uoguelph.ca"><img class="profile-img"
+                    src="resources/Email Icon Black.png" alt=""></a>
+        </div>
+    </footer>
+
     <div id="img-container">
         <img id="backdrop" src="resources/Forest.jpg">
     </div>
