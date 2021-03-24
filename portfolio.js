@@ -37,13 +37,15 @@ window.onload = () => {
         const projectTile = document.importNode(projectTemplate.content, true);
         const anchor = projectTile.querySelector('a');
         anchor.href = proj.link;
-        const image = projectTile.querySelector('img');
-        image.src = proj.image;
-        const title = projectTile.querySelector('h2');
+        const title = projectTile.querySelector('.project-title');
         title.innerHTML = proj.title;
-        const desc = projectTile.querySelectorAll('p');
-        desc[0].innerHTML = proj.desc;
-        desc[1].innerHTML = proj.more;
+        const desc = projectTile.querySelector('.project-desc');
+        desc.innerHTML = proj.desc;
+        const more = projectTile.querySelector('.project-features');
+        more.innerHTML = proj.more;
+        const image = projectTile.querySelector('.project-img');
+        image.src = proj.image;
+        image.alt = proj.title + " project image";
         projectGrid.appendChild(projectTile);
     })
 }

@@ -19,12 +19,12 @@
 
 <body>
     <main>
-        <section id="home">
+        <header id="home">
             <div id="title-div">
                 <h1 id="welcome-title">Bryn Deering</h1>
-                <h2 id="welcome-subtitle">web developer</h2>
+                <h2 id="welcome-subtitle">web portfolio</h2>
             </div>
-        </section>
+        </header>
         
         <section class="portfolio-section" id="about">
 <!--             <svg height="200" width="100vw">
@@ -33,9 +33,34 @@
             </svg> -->
             <h3 class="section-title about-title">About</h3>
             <div id="about-content">
-                <div class="about-col col-1"></div>
-                <div class="about-col col-2"></div>
-                <div class="about-col col-3"></div>
+                <div class="about-col col-1">
+                    <h4>Bio</h4>
+                    <p>Hey I'm Bryn! A passionate web developer who loves front end projects especially those involving React. I am currently working a few personal projects in order to improve my proficiency with front end technologies, and I'm aspiring to work in full stack!</p>
+                </div>
+                <div class="about-col col-2">
+                    <h4>Skills</h4>
+                    <p>•JavaScript
+                        •HTML/CSS
+                        •Python
+                        •Java
+                        •C
+                        •Git
+                        •React.js
+                        •Redux
+                        •Bootstrap
+                        •SASS
+                        •Data Structures
+                        •Algorithm Design and Analysis
+                    </p>
+                </div>
+                <div class="about-col col-3">
+                    <h4>Certifications</h4>
+                    <p>•JavaScript Algorithms and Data Structures (12/2020) FreeCodeCamp
+                        •Front End Libraries (01/2021) FreeCodeCamp
+                        •Responsive Web Design (12/2020) FreeCodeCamp
+                        •Python Essential Training (01/2021)
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -44,18 +69,18 @@
             <div id="project-grid" data-project-grid>
                 <template data-project-template>
                     <a class="project-tile" href="" target="_blank">
-                        <div class="text-content">
-                            <h2 class="project-title"></h2>
+                        <article class="project-text">
+                            <h4 class="project-title"></h4>
                             <p class="project-desc"></p>
-                            <p class="project-more"></p>
-                        </div>
+                            <p class="project-features"></p>
+                        </article>
                         <img class="project-img" src="" alt="" />
                     </a>
                 </template>
             </div>
         </section>
 
-        <section id="profile-links">
+        <footer id="profile-links">
             <div id="profile-links-div">
                 <h1 id="profile-links-title">Contact Me</h1>
                 <a class="profile-link" id="profile-link" target="_blank" href="https://github.com/Bdeering1"><img
@@ -65,7 +90,7 @@
                 <a class="profile-link" target="_blank" href="mailto:bdeering@uoguelph.ca"><img class="profile-img"
                         src="resources/Email Icon Black.png" alt=""></a>
             </div>
-        </section>
+        </footer>
     </main>
     <div id="img-container">
         <img id="backdrop" src="resources/Forest.jpg">

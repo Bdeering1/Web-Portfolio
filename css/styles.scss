@@ -72,7 +72,7 @@ a {
     filter: blur(20px);
     opacity: 0;
   }
-  50% {
+  60% {
     opacity: 0.6;
   }
   100% {
@@ -106,9 +106,14 @@ a {
 
 .section-title {
   margin-top: 0;
-  margin-bottom: 20vh;
+  margin-bottom: 15vh;
   font-size: calc(5vw + 1rem);
   font-family: $font-family-2;
+}
+.article-title {
+  margin-top: 0;
+  font-size: calc(2.1em + 0.3vw);
+  text-align: center;
 }
 
 #about  {
@@ -118,11 +123,23 @@ a {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
 
     .about-col {
       height: 400px;
-      background-color: orange;
+      padding: 1em 1.5em;
+      border: 1px solid black;
+      //border-radius: 6px;
+      //background-color: lightgray;
+
+      h4 {
+        margin-top: 0;
+        font-size: calc(2.1em + 0.3vw);
+        text-align: center;
+      }
+      p {
+        font-size: 1.4em;
+        white-space: pre-line;
+      }
     }
   }
 }
@@ -151,7 +168,7 @@ a {
       transition: transform 1000ms, box-shadow 1000ms;
       background-color: $background-color-2;
 
-      .text-content {
+      .project-text {
         height: 100%;
         width: 60%;
         float: right;
@@ -159,10 +176,10 @@ a {
         flex-direction: column;
 
         .project-title {
-          font-size: 32px;
+          font-size: 2em;
           text-shadow: 1px 1px $background-color-2;
         }
-        .project-desc, .project-more {
+        .project-desc, .project-features {
           text-align: left;
           margin: 0;
           font-size: 1.4em;
@@ -183,7 +200,7 @@ a {
       }
       &:nth-child(2n) {
         grid-column: 3/6;
-        .text-content {
+        .project-text {
           float: left;
         }
         &:hover {
@@ -255,7 +272,7 @@ a {
 
     .project-tile {
       grid-column: 1/6;
-      .text-content {
+      .project-text {
         width: 50%;
       }
       .project-img {
@@ -275,7 +292,7 @@ a {
   }
 }
 @media (max-width: 850px) {
-  #projects #project-grid .project-tile .text-content .project-more{
+  #projects #project-grid .project-tile .project-text .project-features{
     display: none;
   }
 }
@@ -319,7 +336,7 @@ a {
           min-height: 60%;
           max-height: 60%;
         }
-        .text-content {
+        .project-text {
           height: fit-content;
           width: 100%;
           order: 2;
