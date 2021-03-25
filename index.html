@@ -9,9 +9,11 @@
     <meta name="keywords" content="Bryn Deering, Web Portfolio, Web Projects, Front End Development">
     <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Leckerli One">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret One">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script defer src="portfolio.js"></script>
@@ -33,33 +35,32 @@
             </svg> -->
             <h3 class="section-header about-title">About</h3>
             <div id="about-content">
-                <div class="about-col text-block col-1">
+                <div class="about-col text-block">
                     <h4 class="block-header">Bio</h4>
-                    <p class="block-content">Hey I'm Bryn! A passionate web developer who loves front end projects especially those involving React. I am currently working a few personal projects in order to improve my proficiency with front end technologies, and I'm aspiring to work in full stack!</p>
+                    <p class="block-content">Hey I'm Bryn! A passionate web developer who loves front end projects especially those involving React. I am currently working a few personal projects in order to improve my proficiency with front end technologies, and I'm aspiring to work in full stack.</p>
                 </div>
-                <div class="about-col text-block col-2">
-                    <h4 class="block-header">Skills</h4>
-                    <p class="block-content">•JavaScript
-                        •HTML/CSS
-                        •Python
-                        •Java
-                        •C
-                        •Git
-                        •React.js
+                <div class="about-col text-block">
+                    <h4 class="block-header">Core Skills</h4>
+                    <div class="col-2 block-content">
+                        <p>•HTML
+                        •CSS
+                        •JavaScript</p>
+                        <p>•React.js
                         •Redux
-                        •Bootstrap
-                        •SASS
-                        •Data Structures
-                        •Algorithm Design and Analysis
-                    </p>
+                        •SASS</p>
+                    </div>
                 </div>
-                <div class="about-col text-block col-3">
+                <div class="about-col text-block">
                     <h4 class="block-header">Certifications</h4>
-                    <p class="block-content">•JavaScript Algorithms and Data Structures (12/2020) FreeCodeCamp
-                        •Front End Libraries (01/2021) FreeCodeCamp
-                        •Responsive Web Design (12/2020) FreeCodeCamp
-                        •Python Essential Training (01/2021)
-                    </p>
+                    <div class="col-3 block-content">•JavaScript Algorithms and Data Structures
+                        <i>FreeCodeCamp</i>
+
+                        •Front End Libraries
+                        <i>FreeCodeCamp</i>
+
+                        •Responsive Web Design
+                        <i>FreeCodeCamp</i>
+                    </div>
                 </div>
             </div>
         </section>
@@ -68,11 +69,12 @@
             <h3 class="section-header projects-title">Projects</h1>
             <div id="project-grid" data-project-grid>
                 <template data-project-template>
-                    <a class="project-tile link" href="" target="_blank">
+                    <a class="project-tile" href="" target="_blank">
                         <article class="project-text text-block">
-                            <h4 class="block-header project-title"></h4>
-                            <p class="project-desc block-content"></p>
+                            <h4 class="block-header project-header"></h4>
+                            <p class="project-desc block-content"><i></i></p>
                             <p class="project-features block-content"></p>
+                            <div class="tech-badge"><p class="project-tech block-content"></p></div>
                         </article>
                         <img class="project-img" src="" alt="" />
                     </a>
@@ -82,13 +84,13 @@
     </main>
 
     <footer id="profile-links">
+        <h3 class="profile-links-title">Contact Me</h3>
         <div id="profile-links-div">
-            <h3 id="profile-links-title">Contact Me</h3>
-            <a class="link profile-link" id="profile-link" target="_blank" href="https://github.com/Bdeering1"><img
+            <a class="profile-link" id="profile-link" target="_blank" href="https://github.com/Bdeering1"><img
                     class="profile-img" src="resources/Github Icon Black.png" alt=""></a>
-            <a class="link profile-link" target="_blank" href="https://www.linkedin.com/in/bryn-deering-172388197/"><img
+            <a class="profile-link" target="_blank" href="https://www.linkedin.com/in/bryn-deering-172388197/"><img
                     class="profile-img" src="resources/LinkedIn Icon Black.png" alt=""></a>
-            <a class="link profile-link" target="_blank" href="mailto:bdeering@uoguelph.ca"><img class="profile-img"
+            <a class="profile-link" target="_blank" href="mailto:bdeering@uoguelph.ca"><img class="profile-img"
                     src="resources/Email Icon Black.png" alt=""></a>
         </div>
     </footer>
