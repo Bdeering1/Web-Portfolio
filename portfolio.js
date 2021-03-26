@@ -3,6 +3,7 @@ const aboutBlockTemplate = document.querySelector('[data-about-block-template]')
 const projectGrid = document.querySelector('[data-project-grid]');
 const projectTemplate = document.querySelector('[data-project-template]');
 
+/* About Section Data */
 const about = [
     {
         header: 'Core Skills',
@@ -16,8 +17,8 @@ const about = [
         content: [
             `Hey I'm Bryn! A passionate web developer who loves front end projects
             especially those involving React. I am currently working a few personal
-            projects in order to improve my proficiency with front end technologies,
-            and I'm aspiring to work in full stack.`
+            projects to improve my proficiency with front end technologies, and I'm
+            aspiring to work in full stack.`
         ],
         tags: []
     },
@@ -37,10 +38,11 @@ const about = [
     },
 ]
 
+/* Project Section Data */
 const projects = [
     {
         link: 'https://bdeering1.github.io/Visual-Sorting-App',
-        image: 'resources/Visual Sorting.png',
+        image: 'res/Visual Sorting.png',
         title: 'Visual Sorting App',
         desc: 'sorting algorithm learning tool',
         tech: 'React & Redux',
@@ -51,7 +53,7 @@ const projects = [
     },
     {
         link: 'https://bdeering1.github.io/To-Do-List/',
-        image: 'resources/To Do List.png',
+        image: 'res/To Do List.png',
         title: 'To Do List',
         desc: 'personal organization tool',
         tech: 'Javascript & SASS',
@@ -62,7 +64,7 @@ const projects = [
     },
     {
         link: 'https://codepen.io/bdeering1/full/QWKxemq',
-        image: 'resources/Calculator.png',
+        image: 'res/Calculator.png',
         title: 'Calculator',
         desc: 'virtual calculator app',
         tech: 'React & SASS',
@@ -73,7 +75,7 @@ const projects = [
     },
     {
         link: 'https://codepen.io/bdeering1/full/OJRZWEy',
-        image: 'resources/Drum Machine.png',
+        image: 'res/Drum Machine.png',
         title: 'Drum Machine',
         desc: 'virtual drum machine',
         tech: 'React & Bootstrap',
@@ -85,6 +87,7 @@ const projects = [
 ]
 
 window.onload = () => {
+    /* Sending about section info to DOM */
     about.forEach((block, idx) => {
         const template = document.importNode(aboutBlockTemplate.content, true);
         const aboutBlock = template.querySelector('.about-block');
@@ -111,6 +114,7 @@ window.onload = () => {
         }
         aboutBlocks.appendChild(aboutBlock);
     });
+    /* Sending projects section info to DOM */
     projects.forEach((proj) => {
         const template = document.importNode(projectTemplate.content, true);
         const projectTile = template.querySelector('.project-tile');
@@ -135,20 +139,33 @@ window.onload = () => {
     });
 }
 
-//Initial Scroll to Projects Area
+/* Initial Scroll to Projects Area */
 window.onscroll = function(e) {
-    if (this.oldScroll <= this.scrollY && !this.scrolled && window.pageYOffset < 100 && window.innerWidth > 850) {
-        this.scrolled = true;
-        window.scroll({
-            top: findPos(document.getElementById('about')),
-            left: 0,
-            behavior: 'smooth'
-        })
+    if (this.oldScroll <= this.scrollY && window.innerWidth > 850) {
+        if (window.pageYOffset < 100 && !this.firstScroll) {
+            this.firstScroll = true;
+            window.scroll({
+                top: findPos(document.getElementById('about')),
+                left: 0,
+                behavior: 'smooth'
+            })
+        }
+        if (window.pageYOffset > window.innerHeight * 1.1
+            && window.innerWidth > 1250
+            && this.firstScroll
+            && !this.secondScroll) {
+            this.secondScroll = true;
+            window.scroll({
+                top: findPos(document.getElementById('projects')),
+                left: 0,
+                behavior: 'smooth'
+            })
+        }
     }
     this.oldScroll = this.scrollY;
 }
 
-//Background parallax effect
+/* Background parallax effect */
 /* window.addEventListener('scroll', parallax);
 
 function parallax() {

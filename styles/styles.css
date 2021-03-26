@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@font-face {
+  font-family: 'Blackjack';
+  src: url("../fonts/blackjack.woff2") format("woff2"), url("../fonts/blackjack.woff") format("woff"), url("../fonts/blackjack.ttf") format("truetype");
+}
+
 *,
 *::before,
 *::after {
@@ -20,7 +28,11 @@ h1, h2, h3, h4, p, ul {
   padding: 0;
 }
 
-h2, h3, h4 {
+h1, h3, h4 {
+  font-family: "Cabin Sketch";
+}
+
+h2 {
   font-family: "Lato";
   font-weight: 100;
 }
@@ -62,8 +74,8 @@ a {
 #home #title-div #welcome-title {
   margin: 0;
   font-size: calc(8.5vw + 2rem);
-  font-family: "Leckerli One";
-  font-weight: 400;
+  font-family: "Cabin Sketch";
+  font-weight: 700;
   color: whitesmoke;
   -webkit-animation: fadeInTitle 2000ms linear 500ms;
           animation: fadeInTitle 2000ms linear 500ms;
@@ -80,7 +92,6 @@ a {
   top: 100%;
   right: 0;
   font-size: calc(2.5vw + 1rem);
-  font-family: "Lato";
   color: dodgerblue;
   -webkit-animation: fadeInSubtitle 1500ms linear 2200ms;
           animation: fadeInSubtitle 1500ms linear 2200ms;
@@ -180,7 +191,8 @@ a {
 .section-header {
   margin-bottom: 15vh;
   font-size: calc(5vw + 1rem);
-  font-family: "Lato";
+  font-family: "Cabin Sketch";
+  font-weight: 700;
 }
 
 .block-header {
@@ -195,6 +207,7 @@ a {
   font-size: 1.5em;
   line-height: 1.5em;
   letter-spacing: 1px;
+  font-weight: lighter;
 }
 
 .divider {
@@ -206,7 +219,7 @@ a {
   border-top: 2px double crimson;
   overflow: visible;
   text-align: center;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .divider::after {
@@ -237,7 +250,7 @@ a {
 #about .about-title::after {
   content: "";
   width: 150%;
-  height: 2px;
+  height: 3px;
   position: absolute;
   left: -25%;
   -webkit-transform: translateY(1.5em);
@@ -303,7 +316,7 @@ a {
   -webkit-transform: translateY(-0.675em);
           transform: translateY(-0.675em);
   border-radius: 200% 100%;
-  border: solid 4px dodgerblue;
+  border: solid 6px dodgerblue;
   opacity: 0.3;
 }
 
@@ -423,8 +436,8 @@ a {
 }
 
 #profile-links .profile-links-title {
-  font-size: 48px;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  font-size: calc(2vw + 2rem);
 }
 
 #profile-links #profile-links-div {
@@ -450,8 +463,8 @@ a {
 }
 
 #profile-links #profile-links-div .profile-link .profile-img {
-  width: 80px;
-  height: 80px;
+  width: calc(calc(2vw + 2rem) * 1.25);
+  height: calc(calc(2vw + 2rem) * 1.25);
 }
 
 #profile-links #profile-links-div .profile-link:hover {
@@ -459,26 +472,23 @@ a {
           transform: scale(1.1);
 }
 
-#img-container {
+/* #img-container {
   height: auto;
   min-width: 100%;
   position: fixed;
   top: 0;
   z-index: -1;
   overflow: hidden;
-}
 
-#img-container #backdrop {
-  min-width: 100%;
-  max-width: 1920px;
-  min-height: calc(100vh + 100px);
-  position: relative;
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
-  -webkit-filter: contrast(1.1) saturate(95%);
-          filter: contrast(1.1) saturate(95%);
-}
-
+  #backdrop {
+    min-width: 100%;
+    max-width: 1920px;
+    min-height: calc(100vh + 100px);
+    position: relative;
+    transform: translateY(-100px);
+    filter: contrast(1.1) saturate(95%);
+  }
+} */
 @media (max-width: 1600px) {
   #projects #project-grid .project-tile {
     -ms-grid-column: 1;
@@ -624,9 +634,6 @@ a {
     width: 100%;
     min-height: 80px;
     display: block;
-  }
-  #profile-links .profile-links-title {
-    display: none;
   }
   #profile-links #profile-links-div .profile-link {
     -webkit-animation-name: none;

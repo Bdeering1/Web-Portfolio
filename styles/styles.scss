@@ -4,10 +4,21 @@ $clr-dark: #101010;
 $clr-dark-translucent: rgba(16,16,16,0.03);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
-$font-family-1: "Leckerli One";
+$font-family-1: "Cabin Sketch";
 $font-family-2: "Lato";
 $font-family-3: "Poiret One";
 $line-height-1: 1.5em;
+
+@font-face {
+  font-family: 'Blackjack';
+  src: url('../fonts/blackjack.woff2') format('woff2'),
+       url('../fonts/blackjack.woff') format('woff'),
+       url('../fonts/blackjack.ttf')  format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 *,
 *::before,
@@ -27,7 +38,10 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0;
 }
-h2, h3, h4 {
+h1, h3, h4 {
+  font-family: $font-family-1;
+}
+h2 {
   font-family: $font-family-2;
   font-weight: 100;
 }
@@ -56,7 +70,7 @@ a {
       margin: 0;
       font-size: calc(8.5vw + 2rem);
       font-family: $font-family-1;
-      font-weight: 400;
+      font-weight: 700;
       color: $clr-light;
       animation: fadeInTitle 2000ms linear 500ms;
       animation-fill-mode: forwards;
@@ -70,7 +84,6 @@ a {
       top: 100%;
       right: 0;
       font-size: $subtitle-size;
-      font-family: $font-family-2;
       color: dodgerblue;
       animation: fadeInSubtitle 1500ms linear 2200ms;
       animation-fill-mode: forwards;
@@ -118,7 +131,8 @@ a {
 .section-header {
   margin-bottom: 15vh;
   font-size: calc(5vw + 1rem);
-  font-family: $font-family-2;
+  font-family: $font-family-1;
+  font-weight: 700;
 }
 .block-header {
   margin-bottom: 0.5em;
@@ -131,6 +145,7 @@ a {
   font-size: 1.5em;
   line-height: $line-height-1;
   letter-spacing: 1px;
+  font-weight: lighter;
 }
 .divider {
   border: none;
@@ -141,7 +156,7 @@ a {
   border-top: 2px double crimson;
   overflow: visible;
   text-align: center;
-  opacity: 0.9;
+  opacity: 0.5;
 
   &::after {
     $font-divisor: 2;
@@ -170,7 +185,7 @@ a {
     &::after {
       content: "";
       width: 150%;
-      height: 2px;
+      height: 3px;
       position: absolute;
       left: -25%;
       transform: translateY($line-height-1);
@@ -190,7 +205,6 @@ a {
       padding: 1em;
       border: 2px solid $clr-dark-translucent;
       border-radius: 4px;
-      //background-color: $clr-dark-translucent;
 
       .block-header {
         font-size: $header-font-size;
@@ -228,7 +242,7 @@ a {
       height: #{$font-height * (1 + $height-mod)};
       transform: translateY(#{-$font-height * ($height-mod / 2)});
       border-radius: 200% 100%;
-      border: solid 4px dodgerblue;
+      border: solid 6px dodgerblue;
       opacity: 0.3;
     }
   }
@@ -318,14 +332,15 @@ a {
 
 /* ---------------------- FOOTER STYLES -------------------------- */
 #profile-links {
+  $em-size: calc(2vw + 2rem);
   padding: 5vh 15vw;
   display: grid;
   text-align: center;
   background-color: $clr-light;
 
   .profile-links-title {
-    font-size: 48px;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    font-size: $em-size;
   }
 
   #profile-links-div {
@@ -340,8 +355,8 @@ a {
       font-size: 1rem;
 
       .profile-img {
-        width: 80px;
-        height: 80px;
+        width: calc(#{$em-size} * 1.25);
+        height: calc(#{$em-size} * 1.25);
       }
     }
     .profile-link:hover {
@@ -350,7 +365,7 @@ a {
   }
 }
 
-#img-container {
+/* #img-container {
   height: auto;
   min-width: 100%;
   position: fixed;
@@ -366,7 +381,7 @@ a {
     transform: translateY(-100px);
     filter: contrast(1.1) saturate(95%);
   }
-}
+} */
 @media (max-width: 1600px) {
   #projects #project-grid .project-tile {
     grid-column: 1/5;
@@ -497,9 +512,6 @@ a {
     width: 100%;
     min-height: 80px;
     display: block;
-    .profile-links-title {
-      display: none;
-    }
     #profile-links-div {
       .profile-link {
         animation-name: none;
