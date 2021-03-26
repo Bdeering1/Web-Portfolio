@@ -4,21 +4,22 @@ $clr-dark: #101010;
 $clr-dark-translucent: rgba(16,16,16,0.03);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
-$font-family-1: "Blackjack";
-$font-family-2: "Lato";
-$font-family-3: "Poiret One";
+$font-family-1: 'Blackjack','Brush Script MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-family-2: 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-family-3: 'Poiret One', 'Helvetica Neue', Helvetica, sans-serif;
 $line-height-1: 1.5em;
 
 @font-face {
   font-family: 'Blackjack';
   src: url('../fonts/blackjack.woff2') format('woff2'),
-       url('../fonts/blackjack.woff') format('woff'),
-       url('../fonts/blackjack.ttf')  format('truetype');
+       url('../fonts/blackjack.woff') format('woff');
+       font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 
 *,
 *::before,
@@ -32,6 +33,12 @@ body {
   overscroll-behavior: none;
   color: $font-color-1;
   font-family: $font-family-3;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 h1, h2, h3, h4, p, ul {
@@ -76,7 +83,7 @@ a {
       animation-fill-mode: forwards;
       opacity: 0;
       z-index: 1;
-      will-change: filter, transform;
+      will-change: filter, opacity;
     }
     #welcome-subtitle {
       margin: 0;
@@ -88,7 +95,7 @@ a {
       animation: fadeInSubtitle 1500ms linear 2000ms;
       animation-fill-mode: forwards;
       opacity: 0;
-      will-change: filter, transform;
+      will-change: transform, filter, opacity;
     }
   }
 }
@@ -96,12 +103,15 @@ a {
   0% {
     filter: blur(20px);
     opacity: 0;
+    color: dodgerblue;
   }
   60% {
     opacity: 0.6;
+    color: crimson;
   }
   100% {
     filter: blur(0);
+    color: $clr-light;
     opacity: 0.9;
   }
 }
@@ -129,7 +139,6 @@ a {
   align-items: center;
 }
 .section-header {
-  margin-bottom: 15vh;
   font-size: calc(5vw + 1rem);
   font-family: $font-family-1;
   font-weight: 700;
@@ -181,6 +190,7 @@ a {
 
   .about-title {
     position: relative;
+    margin-bottom: 12vh;
 
     &::after {
       content: "";
@@ -232,13 +242,14 @@ a {
   .projects-title {
     color: $clr-light;
     margin-bottom: $projects-gap;
-    &::before {
+    position: relative;
+    &::after {
       $font-height: 1.35em; //makes font appear centered vertically in default position
       $height-mod: 1; //additional % height added
       content: "";
       position: absolute;
-      left: 25%;
-      width: 50%;
+      left: -75%;
+      width: 250%;
       height: #{$font-height * (1 + $height-mod)};
       transform: translateY(#{-$font-height * ($height-mod / 2)});
       border-radius: 200% 100%;
@@ -304,7 +315,7 @@ a {
         border-radius: 20px;
         font-size: 0.8em;
         color: dodgerblue;
-        opacity: 0.8;
+        opacity: 0.9;
       }
       &:hover {
         transform: translateX(3%) scale(1.05);
@@ -493,7 +504,6 @@ a {
         }
         .project-desc {
           display: none;
-          //font-size: 20px;
         }
         .project-features {
           display: none;

@@ -72,21 +72,15 @@ const projects = [
             'Responsize design',
             'Component functions and state manipulation'
         ]
-    },
-    {
-        link: 'https://codepen.io/bdeering1/full/OJRZWEy',
-        image: 'images/Drum Machine.png',
-        title: 'Drum Machine',
-        desc: 'virtual drum machine',
-        tech: 'React & Bootstrap',
-        feat: [
-            'Lifecycle methods, ES6 functionality',
-            'Bootstrap 4 integration'
-        ]
     }
 ]
 
 window.onload = () => {
+    //https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0,0);
     /* Sending about section info to DOM */
     about.forEach((block, idx) => {
         const template = document.importNode(aboutBlockTemplate.content, true);
@@ -140,29 +134,55 @@ window.onload = () => {
 }
 
 /* Initial Scroll to Projects Area */
-window.onscroll = function(e) {
-    if (this.oldScroll <= this.scrollY) {
-        if (window.pageYOffset < 100 && !this.firstScroll) {
-            this.firstScroll = true;
-            window.scroll({
-                top: findPos(document.getElementById('about')),
-                left: 0,
-                behavior: 'smooth'
-            })
+window.onscroll = handleScroll();
+
+function handleScroll() {
+    let lastScroll;
+    this.oldScroll = 99;
+    this.scrollLock = false;
+    return async function() {
+        if (this.oldScroll <= this.scrollY) {
+            if (this.scrollLock) { //prevent overscroll
+                document.body.style.overflowY = 'hidden';
+                clearTimeout(lastScroll);
+                console.log('relock');
+                lastScroll = setTimeout(function() {
+                    document.body.style.overflowY = '';
+                    this.scrollLock = false;
+                    console.log('unlock');
+                }, 500);
+            } else {
+                autoScroll();
+            }
         }
-        if ((window.pageYOffset + window.innerHeight >= findPos(document.getElementById('projects'))
-            || (window.innerWidth > 1250 && window.pageYOffset > window.innerHeight * 1.1))
-            && this.firstScroll
-            && !this.secondScroll) {
-            this.secondScroll = true;
-            window.scroll({
-                top: findPos(document.getElementById('projects')),
-                left: 0,
-                behavior: 'smooth'
-            })
-        }
+        this.oldScroll = this.scrollY;
+    };
+}
+
+function autoScroll() {
+    if (window.pageYOffset < 300 && !this.firstScroll) {
+        window.scroll({
+            top: findPos(document.getElementById('about')),
+            left: 0,
+            behavior: 'smooth'
+        })
+        this.firstScroll = true;
+        console.log('lock');
+        this.scrollLock = true;
     }
-    this.oldScroll = this.scrollY;
+    else if ((window.pageYOffset + window.innerHeight >= findPos(document.getElementById('projects'))
+        || (window.innerWidth > 1250 && window.pageYOffset >= window.innerHeight * 1.1))
+        && this.firstScroll
+        && !this.secondScroll) {
+        this.secondScroll = true;
+        window.scroll({
+            top: findPos(document.getElementById('projects')),
+            left: 0,
+            behavior: 'smooth'
+        })
+        console.log('lock');
+        this.scrollLock = true;
+    }
 }
 
 function findPos(obj) {

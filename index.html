@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
     <Title>Bryn Deering - Web Portfolio</Title>
@@ -9,6 +9,7 @@
     <meta name="keywords" content="Bryn Deering, Web Portfolio, Web Projects, Front End Development">
     <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <script defer src="portfolio.js"></script>
 </head>
@@ -43,7 +44,7 @@
             <h3 class="section-header projects-title">Projects</h1>
             <div id="project-grid" data-project-grid>
                 <template data-project-template>
-                    <a class="project-tile" href="" target="_blank">
+                    <a class="project-tile" target="_blank" rel="noopener" href="">
                         <article class="project-text text-block">
                             <h4 class="block-header project-header"></h4>
                             <p class="project-desc block-content"><i></i></p>
@@ -60,13 +61,13 @@
     <footer id="profile-links">
         <h3 class="section-header profile-links-title">Contact Me</h3>
         <div id="profile-links-div">
-            <a class="profile-link" id="profile-link" target="_blank" href="https://github.com/Bdeering1">
+            <a class="profile-link" aria-label="Github" target="_blank" rel="noopener" href="https://github.com/Bdeering1">
                 <img class="profile-img" src="images/Github Icon Black.png" alt="">
             </a>
-            <a class="profile-link" target="_blank" href="https://www.linkedin.com/in/bryn-deering-172388197/">
+            <a class="profile-link" aria-label="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/bryn-deering-172388197/">
                 <img class="profile-img" src="images/LinkedIn Icon Black.png" alt="">
             </a>
-            <a class="profile-link" target="_blank" href="mailto:bdeering@uoguelph.ca">
+            <a class="profile-link" aria-label="Send Email" target="_blank" rel="noopener" href="mailto:bdeering@uoguelph.ca">
                 <img class="profile-img" src="images/Email Icon Black.png" alt="">
             </a>
         </div>

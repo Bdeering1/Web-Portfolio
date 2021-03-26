@@ -1,10 +1,10 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 @font-face {
   font-family: 'Blackjack';
-  src: url("../fonts/blackjack.woff2") format("woff2"), url("../fonts/blackjack.woff") format("woff"), url("../fonts/blackjack.ttf") format("truetype");
+  src: url("../fonts/blackjack.woff2") format("woff2"), url("../fonts/blackjack.woff") format("woff");
+  font-display: swap;
 }
 
 *,
@@ -20,7 +20,14 @@ body {
   padding: 0;
   overscroll-behavior: none;
   color: #0a0a0a;
-  font-family: "Poiret One";
+  font-family: "Poiret One", "Helvetica Neue", Helvetica, sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1, h2, h3, h4, p, ul {
@@ -29,11 +36,11 @@ h1, h2, h3, h4, p, ul {
 }
 
 h1, h3 {
-  font-family: "Blackjack";
+  font-family: "Blackjack", "Brush Script MT", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 h2, h4 {
-  font-family: "Lato";
+  font-family: "Lato", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 100;
 }
 
@@ -74,7 +81,7 @@ a {
 #home #title-div #welcome-title {
   margin: 0;
   font-size: calc(9.5vw + 2rem);
-  font-family: "Blackjack";
+  font-family: "Blackjack", "Brush Script MT", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 700;
   color: whitesmoke;
   -webkit-animation: fadeInTitle 2000ms linear 500ms;
@@ -83,7 +90,7 @@ a {
           animation-fill-mode: forwards;
   opacity: 0;
   z-index: 1;
-  will-change: filter, transform;
+  will-change: filter, opacity;
 }
 
 #home #title-div #welcome-subtitle {
@@ -98,7 +105,7 @@ a {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
-  will-change: filter, transform;
+  will-change: transform, filter, opacity;
 }
 
 @-webkit-keyframes fadeInTitle {
@@ -106,13 +113,16 @@ a {
     -webkit-filter: blur(20px);
             filter: blur(20px);
     opacity: 0;
+    color: dodgerblue;
   }
   60% {
     opacity: 0.6;
+    color: crimson;
   }
   100% {
     -webkit-filter: blur(0);
             filter: blur(0);
+    color: whitesmoke;
     opacity: 0.9;
   }
 }
@@ -122,13 +132,16 @@ a {
     -webkit-filter: blur(20px);
             filter: blur(20px);
     opacity: 0;
+    color: dodgerblue;
   }
   60% {
     opacity: 0.6;
+    color: crimson;
   }
   100% {
     -webkit-filter: blur(0);
             filter: blur(0);
+    color: whitesmoke;
     opacity: 0.9;
   }
 }
@@ -189,9 +202,8 @@ a {
 }
 
 .section-header {
-  margin-bottom: 15vh;
   font-size: calc(5vw + 1rem);
-  font-family: "Blackjack";
+  font-family: "Blackjack", "Brush Script MT", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 700;
 }
 
@@ -245,6 +257,7 @@ a {
 
 #about .about-title {
   position: relative;
+  margin-bottom: 12vh;
 }
 
 #about .about-title::after {
@@ -305,13 +318,14 @@ a {
 #projects .projects-title {
   color: whitesmoke;
   margin-bottom: 18vh;
+  position: relative;
 }
 
-#projects .projects-title::before {
+#projects .projects-title::after {
   content: "";
   position: absolute;
-  left: 25%;
-  width: 50%;
+  left: -75%;
+  width: 250%;
   height: 2.7em;
   -webkit-transform: translateY(-0.675em);
           transform: translateY(-0.675em);
@@ -392,7 +406,7 @@ a {
   border-radius: 20px;
   font-size: 0.8em;
   color: dodgerblue;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 #projects #project-grid .project-tile:hover {
