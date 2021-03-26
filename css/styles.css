@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -14,12 +15,9 @@ body {
   font-family: "Poiret One";
 }
 
-header, footer, section {
-  background-color: #101010;
-}
-
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul {
   margin: 0;
+  padding: 0;
 }
 
 h2, h3, h4 {
@@ -45,6 +43,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #101010;
 }
 
 #home #title-div {
@@ -185,34 +184,48 @@ a {
 }
 
 .block-header {
-  margin-bottom: 1.25em;
+  margin-bottom: 0.5em;
   text-align: center;
   font-weight: 300;
 }
 
-.text-block {
-  padding: 0 1.5em 1.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .block-content {
   margin: 0;
-  font-size: 1.4em;
+  padding: 0 2%;
+  position: relative;
+  font-size: 1.5em;
   line-height: 1.5em;
-  white-space: pre-line;
 }
 
+.divider {
+  border: none;
+  width: 100%;
+  height: 0px;
+  margin: 0 0 1.25em;
+  border-top: 2px double crimson;
+  overflow: visible;
+  text-align: center;
+  /* &::after {
+    background: $clr-light;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: calc(-0.5em - 0.5px);
+  } */
+}
+
+.bullet-point {
+  list-style-type: circle;
+  padding-bottom: 1em;
+}
+
+/* ---------------------- ABOUT SECTION STYLES -------------------------- */
 #about {
+  min-height: 100vh;
   background-color: whitesmoke;
 }
 
-#about #about-content {
+#about #about-blocks {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -220,23 +233,43 @@ a {
   grid-gap: 5vmax;
 }
 
-#about #about-content .about-col {
-  padding: 0;
+#about #about-blocks .about-block {
+  position: relative;
 }
 
-#about #about-content .about-col h4 {
+#about #about-blocks .about-block .block-header {
   font-size: calc(1.4em + 0.6vw);
 }
 
-#about #about-content .about-col .col-2 {
+#about #about-blocks .about-block .divider {
+  font-size: calc(1.4em + 0.6vw);
+}
+
+#about #about-blocks .about-block .abstract {
+  white-space: pre-line;
+}
+
+#about #about-blocks .about-block .col {
+  margin-left: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+#about #about-blocks .about-block .two-col {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
 
-#about #about-content .about-col .col-3 i {
-  float: right;
+/* ---------------------- PROJECT SECTION STYLES -------------------------- */
+#projects {
+  background-color: #101010;
 }
 
 #projects .projects-title {
@@ -263,12 +296,14 @@ a {
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
   grid-row-gap: 18vh;
+  position: relative;
 }
 
 #projects #project-grid .project-tile {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+  position: relative;
   border-radius: 4px;
   height: 400px;
   min-height: 400px;
@@ -283,6 +318,7 @@ a {
 #projects #project-grid .project-tile .project-text {
   height: 100%;
   width: 50%;
+  padding: 0 1.5em 1.5em;
   position: relative;
   float: right;
   color: #dddddd;
@@ -296,7 +332,12 @@ a {
 }
 
 #projects #project-grid .project-tile .project-text .project-desc {
+  text-align: center;
   margin-bottom: 1em;
+}
+
+#projects #project-grid .project-tile .project-text .project-features {
+  margin-left: 1.5rem;
 }
 
 #projects #project-grid .project-tile .project-img {
@@ -431,11 +472,11 @@ a {
 
 /* ---------------------- MEDIUM SIZED UI -------------------------- */
 @media (max-width: 1250px) {
-  #about #about-content {
+  #about #about-blocks {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  #about #about-content h4 {
+  #about #about-blocks .block-header {
     font-size: 32px !important;
   }
   #projects #project-grid {

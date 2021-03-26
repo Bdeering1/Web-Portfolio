@@ -6,6 +6,7 @@ $font-color-2: #dddddd;
 $font-family-1: "Leckerli One";
 $font-family-2: "Lato";
 $font-family-3: "Poiret One";
+$line-height-1: 1.5em;
 
 *,
 *::before,
@@ -21,12 +22,9 @@ body {
   font-family: $font-family-3;
 }
 
-header, footer, section {
-  background-color: $clr-dark;
-}
-
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul {
   margin: 0;
+  padding: 0;
 }
 h2, h3, h4 {
   font-family: $font-family-2;
@@ -44,6 +42,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: $clr-dark;
 
   #title-div {
     display: flex;
@@ -121,54 +120,86 @@ a {
   font-family: $font-family-2;
 }
 .block-header {
-  margin-bottom: 1.25em;
+  margin-bottom: 0.5em;
   text-align: center;
   font-weight: 300;
 }
-.text-block {
-  padding: 0 1.5em 1.5em;
-  display: flex;
-  flex-direction: column;
-}
 .block-content {
   margin: 0;
-  font-size: 1.4em;
-  line-height: 1.5em;
-  white-space: pre-line;
+  padding: 0 2%;
+  position: relative;
+  font-size: 1.5em;
+  line-height: $line-height-1;
+}
+.divider {
+  border: none;
+  width: 100%;
+  height: 0px;
+  margin: 0 0 1.25em;
+  border-top: 2px double crimson;
+  overflow: visible;
+  text-align: center;
+  //opacity: 0.5;
+
+  /* &::after {
+    background: $clr-light;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: calc(-0.5em - 0.5px);
+  } */
+}
+.bullet-point {
+  list-style-type: circle;
+  padding-bottom: 1em;
 }
 
+/* ---------------------- ABOUT SECTION STYLES -------------------------- */
 #about  {
+  min-height: 100vh;
   background-color: $clr-light;
 
-  #about-content {
+  #about-blocks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 5vmax;
 
-    .about-col {
-      padding: 0;
-      h4 {
-        font-size: calc(1.4em + 0.6vw);
+    .about-block {
+      $header-font-size: calc(1.4em + 0.6vw);
+      position: relative;
+
+      .block-header {
+        font-size: $header-font-size;
       }
-      .col-2 {
+      .divider {
+        font-size: $header-font-size;
+      }
+      .abstract {
+        white-space: pre-line;
+      }
+      .col {
+        margin-left: 1em;
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .two-col {
         display: grid;
         grid-template-columns: 1fr 1fr;
-      }
-      .col-3 i {
-        float: right;
       }
     }
   }
 }
 
+/* ---------------------- PROJECT SECTION STYLES -------------------------- */
 #projects {
+  $projects-gap: 18vh;
+  background-color: $clr-dark;
 
   .projects-title {
     color: $clr-light;
-    margin-bottom: 18vh;
-    //text-shadow: 0.5px 0.5px 0px $font-color-1;
+    margin-bottom: $projects-gap;
     &::before {
-      $font-height: 1.35em; //makes font appear centered vertically
+      $font-height: 1.35em; //makes font appear centered vertically in default position
       $height-mod: 1; //additional % height added
       content: "";
       position: absolute;
@@ -185,13 +216,16 @@ a {
   #project-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-row-gap: 18vh;
+    grid-row-gap: $projects-gap;
+    position: relative;
 
     .project-tile {
+      $tile-height: 400px;
       grid-column: 1/4;
+      position: relative;
       border-radius: 4px;
-      height: 400px;
-      min-height: 400px;
+      height: $tile-height;
+      min-height: $tile-height;
       overflow: hidden;
       transition: transform 1000ms, box-shadow 1000ms;
       will-change: transform;
@@ -199,6 +233,7 @@ a {
       .project-text {
         height: 100%;
         width: 50%;
+        padding: 0 1.5em 1.5em;
         position: relative;
         float: right;
         color: $font-color-2;
@@ -210,7 +245,11 @@ a {
           color: dodgerblue;
         }
         .project-desc {
+          text-align: center;
           margin-bottom: 1em;
+        }
+        .project-features {
+          margin-left: 1.5rem;
         }
       }
       .project-img {
@@ -289,7 +328,6 @@ a {
 }
 
 #img-container {
-  //display: none;
   height: auto;
   min-width: 100%;
   position: fixed;
@@ -317,10 +355,10 @@ a {
 
 /* ---------------------- MEDIUM SIZED UI -------------------------- */
 @media (max-width: 1250px) {
-  #about #about-content{
+  #about #about-blocks{
     grid-template-columns: 1fr;
 
-    h4 {
+    .block-header {
       font-size: 32px !important;
     }
   }

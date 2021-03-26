@@ -34,34 +34,14 @@
                 style="fill:black;" />
             </svg> -->
             <h3 class="section-header about-title">About</h3>
-            <div id="about-content">
-                <div class="about-col text-block">
-                    <h4 class="block-header">Bio</h4>
-                    <p class="block-content">Hey I'm Bryn! A passionate web developer who loves front end projects especially those involving React. I am currently working a few personal projects in order to improve my proficiency with front end technologies, and I'm aspiring to work in full stack.</p>
-                </div>
-                <div class="about-col text-block">
-                    <h4 class="block-header">Core Skills</h4>
-                    <div class="col-2 block-content">
-                        <p>•HTML
-                        •CSS
-                        •JavaScript</p>
-                        <p>•React.js
-                        •Redux
-                        •SASS</p>
-                    </div>
-                </div>
-                <div class="about-col text-block">
-                    <h4 class="block-header">Certifications</h4>
-                    <div class="col-3 block-content">•JavaScript Algorithms and Data Structures
-                        <i>FreeCodeCamp</i>
-
-                        •Front End Libraries
-                        <i>FreeCodeCamp</i>
-
-                        •Responsive Web Design
-                        <i>FreeCodeCamp</i>
-                    </div>
-                </div>
+            <div id="about-blocks" data-about-blocks>
+                <template data-about-block-template>
+                    <section class="about-block text-block">
+                        <h4 class="block-header"></h4>
+                        <hr class="divider">
+                        <!-- block content here (may be a div or ul) -->
+                    </section>
+                </template>
             </div>
         </section>
 
@@ -73,7 +53,7 @@
                         <article class="project-text text-block">
                             <h4 class="block-header project-header"></h4>
                             <p class="project-desc block-content"><i></i></p>
-                            <p class="project-features block-content"></p>
+                            <ul class="project-features block-content"></ul>
                             <div class="tech-badge"><p class="project-tech block-content"></p></div>
                         </article>
                         <img class="project-img" src="" alt="" />
