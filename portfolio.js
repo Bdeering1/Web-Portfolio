@@ -5,6 +5,12 @@ const projectTemplate = document.querySelector('[data-project-template]');
 
 const about = [
     {
+        header: 'Core Skills',
+        type: 'two-col',
+        content: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'SASS'],
+        tags: []
+    },
+    {
         header: 'Bio',
         type: 'abstract',
         content: [
@@ -13,12 +19,6 @@ const about = [
             projects in order to improve my proficiency with front end technologies,
             and I'm aspiring to work in full stack.`
         ],
-        tags: []
-    },
-    {
-        header: 'Core Skills',
-        type: 'two-col',
-        content: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'SASS'],
         tags: []
     },
     {
@@ -42,44 +42,44 @@ const projects = [
         link: 'https://bdeering1.github.io/Visual-Sorting-App',
         image: 'resources/Visual Sorting.png',
         title: 'Visual Sorting App',
-        desc: 'Sorting algorithm learning tool',
+        desc: 'sorting algorithm learning tool',
         tech: 'React & Redux',
         feat: [
-            'fully responsive and cross browser compatible',
-            'modular and scalable design'
+            'Fully responsive and cross browser compatible',
+            'Modular and scalable design'
         ]
     },
     {
         link: 'https://bdeering1.github.io/To-Do-List/',
         image: 'resources/To Do List.png',
         title: 'To Do List',
-        desc: 'Personal organization tool',
+        desc: 'personal organization tool',
         tech: 'Javascript & SASS',
         feat: [
-            'event listeners, DOM manipulation, and browser storage',
-            'css custom properties, pseudo elements, layouts'
+            'Event listeners, DOM manipulation, and browser storage',
+            'CSS custom properties, pseudo elements, layouts'
         ]
     },
     {
         link: 'https://codepen.io/bdeering1/full/QWKxemq',
         image: 'resources/Calculator.png',
         title: 'Calculator',
-        desc: 'Virtual calculator app',
+        desc: 'virtual calculator app',
         tech: 'React & SASS',
         feat: [
-            'responsize design',
-            'component functions and state manipulation'
+            'Responsize design',
+            'Component functions and state manipulation'
         ]
     },
     {
         link: 'https://codepen.io/bdeering1/full/OJRZWEy',
         image: 'resources/Drum Machine.png',
         title: 'Drum Machine',
-        desc: 'Virtual drum machine',
-        tech: 'React & Bootstrap 4',
+        desc: 'virtual drum machine',
+        tech: 'React & Bootstrap',
         feat: [
-            'lifecycle methods, ES6 functionality',
-            'bootstrap integration'
+            'Lifecycle methods, ES6 functionality',
+            'Bootstrap 4 integration'
         ]
     }
 ]
@@ -88,7 +88,7 @@ window.onload = () => {
     about.forEach((block, idx) => {
         const template = document.importNode(aboutBlockTemplate.content, true);
         const aboutBlock = template.querySelector('.about-block');
-        aboutBlock.id = idx;
+        aboutBlock.id = 'block-' + idx;
         const header = aboutBlock.querySelector('.block-header');
         header.innerHTML = block.header;
         if (block.type == 'abstract') {
@@ -149,7 +149,7 @@ window.onscroll = function(e) {
 }
 
 //Background parallax effect
-window.addEventListener('scroll', parallax);
+/* window.addEventListener('scroll', parallax);
 
 function parallax() {
     if (window.innerHeight <= 1280) {
@@ -157,7 +157,7 @@ function parallax() {
         var yPos = -window.pageYOffset / 30;
         s.style.top = yPos + '%';
     }
-}
+} */
 
 function findPos(obj) {
     var curtop = 0;

@@ -1,6 +1,7 @@
 $clr-light: whitesmoke;
 $clr-light-translucent: rgba(245,245,245,0.03);
 $clr-dark: #101010;
+$clr-dark-translucent: rgba(16,16,16,0.03);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
 $font-family-1: "Leckerli One";
@@ -126,28 +127,32 @@ a {
 }
 .block-content {
   margin: 0;
-  padding: 0 2%;
   position: relative;
   font-size: 1.5em;
   line-height: $line-height-1;
+  letter-spacing: 1px;
 }
 .divider {
   border: none;
   width: 100%;
   height: 0px;
   margin: 0 0 1.25em;
+  position: relative;
   border-top: 2px double crimson;
   overflow: visible;
   text-align: center;
-  //opacity: 0.5;
+  opacity: 0.9;
 
-  /* &::after {
+  &::after {
+    $font-divisor: 2;
     background: $clr-light;
-    content: '§';
-    padding: 0 4px;
+    content: '☁';
+    padding: 0 2px;
     position: relative;
-    top: calc(-0.5em - 0.5px);
-  } */
+    bottom: /*calc(0.5em * #{$font-divisor} + 3px);*/calc(0.75em * #{$font-divisor} + 2px);
+    font-size: calc(1em / #{$font-divisor});
+    color: crimson;
+  }
 }
 .bullet-point {
   list-style-type: circle;
@@ -159,14 +164,33 @@ a {
   min-height: 100vh;
   background-color: $clr-light;
 
+  .about-title {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 150%;
+      height: 2px;
+      position: absolute;
+      left: -25%;
+      transform: translateY($line-height-1);
+      background-color: crimson;
+      opacity: 0.5;
+    }
+  }
+
   #about-blocks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5vmax;
+    grid-gap: 2vw;
 
     .about-block {
       $header-font-size: calc(1.4em + 0.6vw);
       position: relative;
+      padding: 1em;
+      border: 2px solid $clr-dark-translucent;
+      border-radius: 4px;
+      //background-color: $clr-dark-translucent;
 
       .block-header {
         font-size: $header-font-size;
@@ -181,10 +205,6 @@ a {
         margin-left: 1em;
         display: flex;
         flex-flow: column wrap;
-      }
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
       }
     }
   }
@@ -209,7 +229,6 @@ a {
       transform: translateY(#{-$font-height * ($height-mod / 2)});
       border-radius: 200% 100%;
       border: solid 4px dodgerblue;
-      //background-color: dodgerblue;
       opacity: 0.3;
     }
   }
@@ -247,6 +266,10 @@ a {
         .project-desc {
           text-align: center;
           margin-bottom: 1em;
+          font-size: 1.3em;
+          position: relative;
+          transform: translateY(-25%);
+          opacity: 0.6;
         }
         .project-features {
           margin-left: 1.5rem;
@@ -357,7 +380,27 @@ a {
 @media (max-width: 1250px) {
   #about #about-blocks{
     grid-template-columns: 1fr;
+    grid-gap: 10vh;
 
+    #block-0 {
+      order: 1;
+    }
+    .about-block {
+      padding: 0;
+      border: none;
+      .block-header {
+        margin-bottom: 1em;
+      }
+      .block-content {
+        padding: 0 20px;
+      }
+      .two-col {
+        flex-direction: row;
+        li {
+          width: 50%;
+        }
+      }
+    }
     .block-header {
       font-size: 32px !important;
     }
@@ -392,10 +435,9 @@ a {
       transform: translateY(+10%);
 
       #welcome-title {
-        font-size: 48px;
+        font-size: calc(8.5vw + 1rem);;
       }
       #welcome-subtitle {
-        align-self: center;
         font-size: 24px;
       }
     }
@@ -409,6 +451,10 @@ a {
   }
 
   #projects {
+    .projects-title::before {
+      border: none;
+    }
+
     #project-grid .project-tile {
       grid-column: 1/6;
       display: flex;
@@ -427,6 +473,7 @@ a {
         order: 2;
         .project-header {
           font-size: 24px;
+          margin-bottom: 1.25em;
         }
         .project-desc {
           display: none;

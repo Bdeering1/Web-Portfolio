@@ -191,10 +191,10 @@ a {
 
 .block-content {
   margin: 0;
-  padding: 0 2%;
   position: relative;
   font-size: 1.5em;
   line-height: 1.5em;
+  letter-spacing: 1px;
 }
 
 .divider {
@@ -202,16 +202,21 @@ a {
   width: 100%;
   height: 0px;
   margin: 0 0 1.25em;
+  position: relative;
   border-top: 2px double crimson;
   overflow: visible;
   text-align: center;
-  /* &::after {
-    background: $clr-light;
-    content: '§';
-    padding: 0 4px;
-    position: relative;
-    top: calc(-0.5em - 0.5px);
-  } */
+  opacity: 0.9;
+}
+
+.divider::after {
+  background: whitesmoke;
+  content: '☁';
+  padding: 0 2px;
+  position: relative;
+  bottom: calc(0.75em * 2 + 2px);
+  font-size: calc(1em / 2);
+  color: crimson;
 }
 
 .bullet-point {
@@ -225,16 +230,35 @@ a {
   background-color: whitesmoke;
 }
 
+#about .about-title {
+  position: relative;
+}
+
+#about .about-title::after {
+  content: "";
+  width: 150%;
+  height: 2px;
+  position: absolute;
+  left: -25%;
+  -webkit-transform: translateY(1.5em);
+          transform: translateY(1.5em);
+  background-color: crimson;
+  opacity: 0.5;
+}
+
 #about #about-blocks {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 5vmax;
+  grid-gap: 2vw;
 }
 
 #about #about-blocks .about-block {
   position: relative;
+  padding: 1em;
+  border: 2px solid rgba(16, 16, 16, 0.03);
+  border-radius: 4px;
 }
 
 #about #about-blocks .about-block .block-header {
@@ -258,13 +282,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-}
-
-#about #about-blocks .about-block .two-col {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
 }
 
 /* ---------------------- PROJECT SECTION STYLES -------------------------- */
@@ -334,6 +351,11 @@ a {
 #projects #project-grid .project-tile .project-text .project-desc {
   text-align: center;
   margin-bottom: 1em;
+  font-size: 1.3em;
+  position: relative;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+  opacity: 0.6;
 }
 
 #projects #project-grid .project-tile .project-text .project-features {
@@ -475,6 +497,31 @@ a {
   #about #about-blocks {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    grid-gap: 10vh;
+  }
+  #about #about-blocks #block-0 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  #about #about-blocks .about-block {
+    padding: 0;
+    border: none;
+  }
+  #about #about-blocks .about-block .block-header {
+    margin-bottom: 1em;
+  }
+  #about #about-blocks .about-block .block-content {
+    padding: 0 20px;
+  }
+  #about #about-blocks .about-block .two-col {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #about #about-blocks .about-block .two-col li {
+    width: 50%;
   }
   #about #about-blocks .block-header {
     font-size: 32px !important;
@@ -512,12 +559,9 @@ a {
             transform: translateY(10%);
   }
   #home #title-div #welcome-title {
-    font-size: 48px;
+    font-size: calc(8.5vw + 1rem);
   }
   #home #title-div #welcome-subtitle {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
     font-size: 24px;
   }
   .section-header {
@@ -526,6 +570,9 @@ a {
   #about #about-content {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  #projects .projects-title::before {
+    border: none;
   }
   #projects #project-grid .project-tile {
     -ms-grid-column: 1;
@@ -557,6 +604,7 @@ a {
   }
   #projects #project-grid .project-tile .project-text .project-header {
     font-size: 24px;
+    margin-bottom: 1.25em;
   }
   #projects #project-grid .project-tile .project-text .project-desc {
     display: none;
