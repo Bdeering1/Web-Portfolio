@@ -42,7 +42,7 @@ const about = [
 const projects = [
     {
         link: 'https://bdeering1.github.io/Visual-Sorting-App',
-        image: 'res/Visual Sorting.png',
+        image: 'images/Visual Sorting.png',
         title: 'Visual Sorting App',
         desc: 'sorting algorithm learning tool',
         tech: 'React & Redux',
@@ -53,7 +53,7 @@ const projects = [
     },
     {
         link: 'https://bdeering1.github.io/To-Do-List/',
-        image: 'res/To Do List.png',
+        image: 'images/To Do List.png',
         title: 'To Do List',
         desc: 'personal organization tool',
         tech: 'Javascript & SASS',
@@ -64,7 +64,7 @@ const projects = [
     },
     {
         link: 'https://codepen.io/bdeering1/full/QWKxemq',
-        image: 'res/Calculator.png',
+        image: 'images/Calculator.png',
         title: 'Calculator',
         desc: 'virtual calculator app',
         tech: 'React & SASS',
@@ -75,7 +75,7 @@ const projects = [
     },
     {
         link: 'https://codepen.io/bdeering1/full/OJRZWEy',
-        image: 'res/Drum Machine.png',
+        image: 'images/Drum Machine.png',
         title: 'Drum Machine',
         desc: 'virtual drum machine',
         tech: 'React & Bootstrap',
@@ -141,7 +141,7 @@ window.onload = () => {
 
 /* Initial Scroll to Projects Area */
 window.onscroll = function(e) {
-    if (this.oldScroll <= this.scrollY && window.innerWidth > 850) {
+    if (this.oldScroll <= this.scrollY) {
         if (window.pageYOffset < 100 && !this.firstScroll) {
             this.firstScroll = true;
             window.scroll({
@@ -150,8 +150,8 @@ window.onscroll = function(e) {
                 behavior: 'smooth'
             })
         }
-        if (window.pageYOffset > window.innerHeight * 1.1
-            && window.innerWidth > 1250
+        if ((window.pageYOffset + window.innerHeight >= findPos(document.getElementById('projects'))
+            || (window.innerWidth > 1250 && window.pageYOffset > window.innerHeight * 1.1))
             && this.firstScroll
             && !this.secondScroll) {
             this.secondScroll = true;
@@ -164,17 +164,6 @@ window.onscroll = function(e) {
     }
     this.oldScroll = this.scrollY;
 }
-
-/* Background parallax effect */
-/* window.addEventListener('scroll', parallax);
-
-function parallax() {
-    if (window.innerHeight <= 1280) {
-        let s = document.getElementById('img-container');
-        var yPos = -window.pageYOffset / 30;
-        s.style.top = yPos + '%';
-    }
-} */
 
 function findPos(obj) {
     var curtop = 0;

@@ -4,7 +4,7 @@ $clr-dark: #101010;
 $clr-dark-translucent: rgba(16,16,16,0.03);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
-$font-family-1: "Cabin Sketch";
+$font-family-1: "Blackjack";
 $font-family-2: "Lato";
 $font-family-3: "Poiret One";
 $line-height-1: 1.5em;
@@ -38,10 +38,10 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0;
 }
-h1, h3, h4 {
+h1, h3 {
   font-family: $font-family-1;
 }
-h2 {
+h2, h4 {
   font-family: $font-family-2;
   font-weight: 100;
 }
@@ -68,7 +68,7 @@ a {
 
     #welcome-title {
       margin: 0;
-      font-size: calc(8.5vw + 2rem);
+      font-size: calc(9.5vw + 2rem);
       font-family: $font-family-1;
       font-weight: 700;
       color: $clr-light;
@@ -85,7 +85,7 @@ a {
       right: 0;
       font-size: $subtitle-size;
       color: dodgerblue;
-      animation: fadeInSubtitle 1500ms linear 2200ms;
+      animation: fadeInSubtitle 1500ms linear 2000ms;
       animation-fill-mode: forwards;
       opacity: 0;
       will-change: filter, transform;
@@ -160,7 +160,7 @@ a {
 
   &::after {
     $font-divisor: 2;
-    background: $clr-light;
+    background-color: $clr-light;
     content: '☁';
     padding: 0 2px;
     position: relative;
@@ -242,7 +242,7 @@ a {
       height: #{$font-height * (1 + $height-mod)};
       transform: translateY(#{-$font-height * ($height-mod / 2)});
       border-radius: 200% 100%;
-      border: solid 6px dodgerblue;
+      border: solid 4px dodgerblue;
       opacity: 0.3;
     }
   }
@@ -382,6 +382,7 @@ a {
     filter: contrast(1.1) saturate(95%);
   }
 } */
+
 @media (max-width: 1600px) {
   #projects #project-grid .project-tile {
     grid-column: 1/5;

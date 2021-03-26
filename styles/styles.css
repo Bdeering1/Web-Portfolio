@@ -28,11 +28,11 @@ h1, h2, h3, h4, p, ul {
   padding: 0;
 }
 
-h1, h3, h4 {
-  font-family: "Cabin Sketch";
+h1, h3 {
+  font-family: "Blackjack";
 }
 
-h2 {
+h2, h4 {
   font-family: "Lato";
   font-weight: 100;
 }
@@ -73,8 +73,8 @@ a {
 
 #home #title-div #welcome-title {
   margin: 0;
-  font-size: calc(8.5vw + 2rem);
-  font-family: "Cabin Sketch";
+  font-size: calc(9.5vw + 2rem);
+  font-family: "Blackjack";
   font-weight: 700;
   color: whitesmoke;
   -webkit-animation: fadeInTitle 2000ms linear 500ms;
@@ -93,8 +93,8 @@ a {
   right: 0;
   font-size: calc(2.5vw + 1rem);
   color: dodgerblue;
-  -webkit-animation: fadeInSubtitle 1500ms linear 2200ms;
-          animation: fadeInSubtitle 1500ms linear 2200ms;
+  -webkit-animation: fadeInSubtitle 1500ms linear 2000ms;
+          animation: fadeInSubtitle 1500ms linear 2000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
@@ -191,7 +191,7 @@ a {
 .section-header {
   margin-bottom: 15vh;
   font-size: calc(5vw + 1rem);
-  font-family: "Cabin Sketch";
+  font-family: "Blackjack";
   font-weight: 700;
 }
 
@@ -223,7 +223,7 @@ a {
 }
 
 .divider::after {
-  background: whitesmoke;
+  background-color: whitesmoke;
   content: '☁';
   padding: 0 2px;
   position: relative;
@@ -316,7 +316,7 @@ a {
   -webkit-transform: translateY(-0.675em);
           transform: translateY(-0.675em);
   border-radius: 200% 100%;
-  border: solid 6px dodgerblue;
+  border: solid 4px dodgerblue;
   opacity: 0.3;
 }
 
