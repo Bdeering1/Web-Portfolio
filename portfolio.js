@@ -77,10 +77,10 @@ const projects = [
 
 window.onload = () => {
     //https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
-    if ('scrollRestoration' in history) {
+    /* if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0,0);
+    window.scrollTo(0,0); */
     /* Sending about section info to DOM */
     about.forEach((block, idx) => {
         const template = document.importNode(aboutBlockTemplate.content, true);
@@ -109,7 +109,7 @@ window.onload = () => {
         aboutBlocks.appendChild(aboutBlock);
     });
     /* Sending projects section info to DOM */
-    projects.forEach((proj) => {
+    projects.forEach((proj, idx) => {
         const template = document.importNode(projectTemplate.content, true);
         const projectTile = template.querySelector('.project-tile');
         projectTile.href = proj.link;
@@ -129,11 +129,28 @@ window.onload = () => {
         const image = projectTile.querySelector('.project-img');
         image.src = proj.image;
         image.alt = proj.title + ' project image';
-        projectGrid.appendChild(projectTile);
+        const decor = template.querySelector('.decor');
+        const decorWrap = document.createElement('div');
+        const decorInner = document.createElement('div');
+        decorWrap.className = 'decor-wrap';
+        decorInner.className = 'decor-inner';
+        decorWrap.appendChild(decorInner);
+        decor.appendChild(decorWrap);
+        if (idx % 2 == 0) {
+            projectTile.classList.add('tile-odd');
+            decor.classList.add('decor-odd');
+            projectGrid.appendChild(decor);
+            projectGrid.appendChild(projectTile);
+        } else {
+            projectTile.classList.add('tile-even');
+            decor.classList.add('decor-even');
+            projectGrid.appendChild(projectTile);
+            projectGrid.appendChild(decor);
+        }
     });
 }
 
-/* Initial Scroll to Projects Area */
+/* Autoscroll to about and projects sections */
 window.onscroll = handleScroll();
 
 function handleScroll() {
