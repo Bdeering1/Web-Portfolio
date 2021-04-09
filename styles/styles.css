@@ -49,6 +49,22 @@ a {
   text-decoration: none;
 }
 
+.img-container {
+  height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.img-container .backdrop {
+  min-height: 100%;
+  max-width: 1920px;
+  position: relative;
+}
+
 /* ---------------------- WELCOME PAGE STYLES -------------------------- */
 #home {
   height: 110vh;
@@ -62,7 +78,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #101010;
 }
 
 #home #title-div {
@@ -106,6 +121,10 @@ a {
           animation-fill-mode: forwards;
   opacity: 0;
   will-change: transform, filter, opacity;
+}
+
+#home .img-container {
+  height: 110vh;
 }
 
 @-webkit-keyframes fadeInTitle {
@@ -235,7 +254,6 @@ a {
 }
 
 .divider::after {
-  background-color: whitesmoke;
   content: "☁";
   padding: 0 2px;
   position: relative;
@@ -252,7 +270,7 @@ a {
 /* ---------------------- ABOUT SECTION STYLES -------------------------- */
 #about {
   min-height: 100vh;
-  background-color: whitesmoke;
+  position: relative;
 }
 
 #about .about-title {
@@ -283,7 +301,7 @@ a {
 #about #about-blocks .about-block {
   position: relative;
   padding: 1em;
-  border: 2px solid rgba(16, 16, 16, 0.03);
+  border: 2px solid rgba(16, 16, 16, 0.1);
   border-radius: 4px;
 }
 
@@ -293,6 +311,10 @@ a {
 
 #about #about-blocks .about-block .divider {
   font-size: calc(1.4em + 0.6vw);
+}
+
+#about #about-blocks .about-block .divider::after {
+  background-color: #fefefe;
 }
 
 #about #about-blocks .about-block .abstract {
@@ -310,9 +332,24 @@ a {
           flex-flow: column wrap;
 }
 
+#about #about-blocks #block-2 .divider::after {
+  background-color: #e0e3e9;
+}
+
+#about .img-container .backdrop {
+  -webkit-filter: saturate(80%);
+          filter: saturate(80%);
+}
+
+@media (min-width: 1875px) {
+  #block-2 .divider::after {
+    background-color: #c4c9d2 !important;
+  }
+}
+
 /* ---------------------- PROJECT SECTION STYLES -------------------------- */
 #projects {
-  background-color: #101010;
+  position: relative;
 }
 
 #projects .projects-title {
@@ -322,6 +359,7 @@ a {
 }
 
 #projects .projects-title::after {
+  display: none;
   content: "";
   position: absolute;
   left: -75%;
@@ -362,7 +400,7 @@ a {
   padding: 0 1.5em 1.5em;
   position: relative;
   color: #dddddd;
-  background-color: rgba(245, 245, 245, 0.03);
+  background-color: rgba(16, 16, 16, 0.1);
 }
 
 #projects #project-grid .project-tile .project-text .project-header {
@@ -392,16 +430,18 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   float: left;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
 }
 
 #projects #project-grid .project-tile .tech-badge {
   position: absolute;
   bottom: 0;
-  margin: 1.5em;
+  margin: 1em;
+  padding: 0.5em;
   border-radius: 20px;
   font-size: 0.8em;
-  color: dodgerblue;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 #projects #project-grid .project-tile:hover {
@@ -456,11 +496,9 @@ a {
 }
 
 #projects #project-grid .decor {
+  display: none;
   grid-column: auto / span 2;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -514,13 +552,21 @@ a {
   left: -0.65em;
 }
 
+#projects .img-container .backdrop {
+  min-height: 200%;
+  min-width: 2400px;
+  -webkit-transform: translateX(-480px);
+          transform: translateX(-480px);
+  -webkit-filter: contrast(70%) saturate(120%) brightness(65%);
+          filter: contrast(70%) saturate(120%) brightness(65%);
+}
+
 /* ---------------------- FOOTER STYLES -------------------------- */
 #profile-links {
   padding: 5vh 15vw;
   display: -ms-grid;
   display: grid;
   text-align: center;
-  background-color: whitesmoke;
 }
 
 #profile-links .profile-links-title {
@@ -548,6 +594,7 @@ a {
   transition: transform 400ms;
   transition: transform 400ms, -webkit-transform 400ms;
   font-size: 1rem;
+  position: relative;
 }
 
 #profile-links #profile-links-div .profile-link .profile-img {
@@ -560,25 +607,11 @@ a {
           transform: scale(1.1);
 }
 
-/* #img-container {
-  height: auto;
-  min-width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  overflow: hidden;
-
-  #backdrop {
-    min-width: 100%;
-    max-width: 1920px;
-    min-height: calc(100vh + 100px);
-    position: relative;
-    transform: translateY(-100px);
-    filter: contrast(1.1) saturate(95%);
-  }
-} */
 /* ---------------------- LARGE SIZED UI -------------------------- */
 @media (max-width: 1600px) {
+  #about #about-blocks #block-2 .divider::after {
+    background-color: #e1e4eb;
+  }
   #projects #project-grid .project-tile.tile-even {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
@@ -596,15 +629,14 @@ a {
 
 /* ---------------------- MEDIUM SIZED UI -------------------------- */
 @media (max-width: 1250px) {
+  #home .img-container .backdrop {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+  }
   #about #about-blocks {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 10vh;
-  }
-  #about #about-blocks #block-0 {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
   }
   #about #about-blocks .about-block {
     padding: 0;
@@ -612,6 +644,7 @@ a {
   }
   #about #about-blocks .about-block .block-header {
     margin-bottom: 1em;
+    font-size: 32px !important;
   }
   #about #about-blocks .about-block .block-content {
     padding: 0 20px;
@@ -625,8 +658,20 @@ a {
   #about #about-blocks .about-block .two-col li {
     width: 50%;
   }
-  #about #about-blocks .block-header {
-    font-size: 32px !important;
+  #about #about-blocks #block-0 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  #about #about-blocks #block-0 .divider::after {
+    background-color: #f0f0f0;
+  }
+  #about #about-blocks #block-1 .divider::after {
+    background-color: #e2e6eb;
+  }
+  #about .img-container .backdrop {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
   }
   #projects #project-grid {
     grid-row-gap: 10vh;
@@ -650,10 +695,7 @@ a {
 }
 
 /* ---------------------- MOBILE UI -------------------------- */
-@media only screen and (max-width: 768px) and (orientation: portrait) {
-  #img-container {
-    min-height: 228%;
-  }
+@media only screen and (max-width: 768px) {
   #home #title-div {
     -webkit-transform: translateY(10%);
             transform: translateY(10%);
@@ -664,12 +706,17 @@ a {
   #home #title-div #welcome-subtitle {
     font-size: 24px;
   }
+  #home .img-container .backdrop {
+    -webkit-transform: translateX(-15%) translateY(-5%);
+            transform: translateX(-15%) translateY(-5%);
+  }
   .section-header {
     font-size: 48px;
   }
-  #about #about-content {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+  #about #about-blocks #block-0 .divider::after,
+  #about #about-blocks #block-1 .divider::after,
+  #about #about-blocks #block-2 .divider::after {
+    background-color: #f1f4f6 !important;
   }
   #projects .projects-title::before {
     border: none;
