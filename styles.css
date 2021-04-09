@@ -423,6 +423,19 @@ a {
   margin-left: 1.5rem;
 }
 
+#projects #project-grid .project-tile .project-text .tech-badge {
+  position: absolute;
+  bottom: 0;
+  margin: 1em;
+  padding: 0.5em;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+#projects #project-grid .project-tile .project-text:hover {
+  border: solid 2px whitesmoke;
+}
+
 #projects #project-grid .project-tile .project-img {
   width: 50%;
   min-height: 100%;
@@ -434,14 +447,8 @@ a {
           filter: brightness(90%);
 }
 
-#projects #project-grid .project-tile .tech-badge {
-  position: absolute;
-  bottom: 0;
-  margin: 1em;
-  padding: 0.5em;
-  border-radius: 20px;
-  font-size: 0.8em;
-  opacity: 0.6;
+#projects #project-grid .project-tile .project-img:hover {
+  border: solid 2px whitesmoke;
 }
 
 #projects #project-grid .project-tile:hover {
@@ -554,11 +561,8 @@ a {
 
 #projects .img-container .backdrop {
   min-height: 200%;
-  min-width: 2400px;
-  -webkit-transform: translateX(-480px);
-          transform: translateX(-480px);
-  -webkit-filter: contrast(70%) saturate(120%) brightness(65%);
-          filter: contrast(70%) saturate(120%) brightness(65%);
+  -webkit-filter: contrast(70%) saturate(160%) brightness(65%);
+          filter: contrast(70%) saturate(160%) brightness(65%);
 }
 
 /* ---------------------- FOOTER STYLES -------------------------- */
@@ -567,6 +571,7 @@ a {
   display: -ms-grid;
   display: grid;
   text-align: center;
+  position: relative;
 }
 
 #profile-links .profile-links-title {
@@ -769,8 +774,6 @@ a {
   }
   #profile-links {
     width: 100%;
-    min-height: 80px;
-    display: block;
   }
   #profile-links #profile-links-div .profile-link {
     -webkit-animation-name: none;

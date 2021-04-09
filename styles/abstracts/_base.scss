@@ -1,0 +1,58 @@
+$clr-light: whitesmoke;
+$clr-light-translucent: rgba(245,245,245,0.8);
+$clr-dark: #101010;
+$clr-dark-translucent: rgba(16,16,16,0.1);
+$font-color-1: #0a0a0a;
+$font-color-2: #dddddd;
+$font-family-1: 'Blackjack','Brush Script MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-family-2: 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-family-3: 'Poiret One', 'Helvetica Neue', Helvetica, sans-serif;
+$line-height-1: 1.5em;
+
+@font-face {
+  font-family: 'Blackjack';
+  src: url('../fonts/blackjack.woff2') format('woff2'),
+       url('../fonts/blackjack.woff') format('woff');
+       font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  color: $font-color-1;
+  font-family: $font-family-3;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+  padding: 0;
+}
+h1, h3 {
+  font-family: $font-family-1;
+}
+h2, h4 {
+  font-family: $font-family-2;
+  font-weight: 100;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}

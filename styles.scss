@@ -1,5 +1,5 @@
 $clr-light: whitesmoke;
-$clr-light-translucent: rgba(245,245,245,0.1);
+$clr-light-translucent: rgba(245,245,245,0.8);
 $clr-dark: #101010;
 $clr-dark-translucent: rgba(16,16,16,0.1);
 $font-color-1: #0a0a0a;
@@ -327,6 +327,17 @@ a {
         .project-features {
           margin-left: 1.5rem;
         }
+        .tech-badge {
+          position: absolute;
+          bottom: 0;
+          margin: 1em;
+          padding: 0.5em;
+          font-size: 0.8em;
+          opacity: 0.6;
+        }
+        &:hover {
+          border: solid 2px $clr-light;
+        }
       }
       .project-img {
         width: 50%;
@@ -335,15 +346,9 @@ a {
         object-fit: cover;
         float: left;
         filter: brightness(90%);
-      }
-      .tech-badge {
-        position: absolute;
-        bottom: 0;
-        margin: 1em;
-        padding: 0.5em;
-        border-radius: 20px;
-        font-size: 0.8em;
-        opacity: 0.6;
+        &:hover {
+          border: solid 2px $clr-light;
+        }
       }
       &:hover {
         box-shadow: 0 10px 17px -2px rgba(0, 0, 0, 0.4);
@@ -426,9 +431,7 @@ a {
   .img-container {
     .backdrop {
       min-height: 200%;
-      min-width: 2400px;
-      transform: translateX(-480px);
-      filter: contrast(70%) saturate(120%) brightness(65%);
+      filter: contrast(70%) saturate(160%) brightness(65%);
     }
   }
 }
@@ -439,7 +442,7 @@ a {
   padding: 5vh 15vw;
   display: grid;
   text-align: center;
-  //background-color: $clr-light;
+  position: relative;
 
   .profile-links-title {
     margin-bottom: 0.5em;
@@ -621,8 +624,7 @@ a {
 
   #profile-links {
     width: 100%;
-    min-height: 80px;
-    display: block;
+    
     #profile-links-div {
       .profile-link {
         animation-name: none;

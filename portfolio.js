@@ -41,7 +41,8 @@ const about = [
 /* Project Section Data */
 const projects = [
     {
-        link: 'https://bdeering1.github.io/Visual-Sorting-App',
+        pageLink: 'https://bdeering1.github.io/Visual-Sorting-App',
+        sourceLink: 'https://github.com/Bdeering1/Visual-Sorting-App',
         image: 'images/Visual Sorting.png',
         title: 'Visual Sorting App',
         desc: 'sorting algorithm learning tool',
@@ -52,7 +53,8 @@ const projects = [
         ]
     },
     {
-        link: 'https://bdeering1.github.io/To-Do-List/',
+        pageLink: 'https://bdeering1.github.io/To-Do-List/',
+        sourceLink: 'https://github.com/Bdeering1/To-Do-List',
         image: 'images/To Do List.png',
         title: 'To Do List',
         desc: 'personal organization tool',
@@ -63,7 +65,8 @@ const projects = [
         ]
     },
     {
-        link: 'https://codepen.io/bdeering1/full/QWKxemq',
+        pageLink: 'https://codepen.io/bdeering1/full/QWKxemq',
+        sourceLink: 'https://codepen.io/bdeering1/pen/QWKxemq',
         image: 'images/Calculator.png',
         title: 'Calculator',
         desc: 'virtual calculator app',
@@ -77,7 +80,7 @@ const projects = [
 
 window.onload = () => {
     //https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
-    /* if ('scrollRestoration' in history) {
+/*     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0,0); */
@@ -112,7 +115,10 @@ window.onload = () => {
     projects.forEach((proj, idx) => {
         const template = document.importNode(projectTemplate.content, true);
         const projectTile = template.querySelector('.project-tile');
-        projectTile.href = proj.link;
+        const text = template.querySelector('.source-link');
+        text.href = proj.sourceLink;
+        const img = template.querySelector('.page-link');
+        img.href = proj.pageLink;
         const title = projectTile.querySelector('.project-header');
         title.innerHTML = proj.title;
         const desc = projectTile.querySelector('.project-desc i');
@@ -162,11 +168,11 @@ function handleScroll() {
             if (this.scrollLock) { //prevent overscroll
                 document.body.style.overflowY = 'hidden';
                 clearTimeout(lastScroll);
-                console.log('relock');
+                //console.log('relock');
                 lastScroll = setTimeout(function() {
                     document.body.style.overflowY = '';
                     this.scrollLock = false;
-                    console.log('unlock');
+                    //console.log('unlock');
                 }, 500);
             } else {
                 autoScroll();
@@ -184,7 +190,7 @@ function autoScroll() {
             behavior: 'smooth'
         })
         this.firstScroll = true;
-        console.log('lock');
+        //console.log('lock');
         this.scrollLock = true;
     }
     else if ((window.pageYOffset + window.innerHeight >= findPos(document.getElementById('projects'))
@@ -197,7 +203,7 @@ function autoScroll() {
             left: 0,
             behavior: 'smooth'
         })
-        console.log('lock');
+        //console.log('lock');
         this.scrollLock = true;
     }
 }

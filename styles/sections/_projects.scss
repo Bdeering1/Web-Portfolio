@@ -1,0 +1,196 @@
+#projects {
+  $projects-gap: 18vh;
+  position: relative;
+
+  .projects-title {
+    color: $clr-light;
+    margin-bottom: $projects-gap;
+    position: relative;
+    &::after {
+      display: none;
+      $font-height: 1.35em; //makes font appear centered vertically in default position
+      $height-mod: 1; //additional % height added
+      content: "";
+      position: absolute;
+      left: -75%;
+      width: 250%;
+      height: #{$font-height * (1 + $height-mod)};
+      transform: translateY(#{-$font-height * ($height-mod / 2)});
+      border-radius: 200% 100%;
+      border: solid 4px dodgerblue;
+      opacity: 0.3;
+    }
+  }
+  #project-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: $projects-gap;
+    position: relative;
+
+    .project-tile {
+      $tile-height: 400px;
+      position: relative;
+      border-radius: 4px;
+      height: $tile-height;
+      min-height: $tile-height;
+      //overflow: hidden;
+      transition: transform 1000ms, box-shadow 1000ms;
+      will-change: transform;
+
+      .project-text {
+        height: 100%;
+        width: 50%;
+        padding: 0 1.5em 1.5em;
+        position: relative;
+        color: $font-color-2;
+        background-color: $clr-dark-translucent;
+
+        .project-header {
+          margin-top: 1.25em;
+          font-size: 2em;
+          color: dodgerblue;
+        }
+        .project-desc {
+          text-align: center;
+          margin-bottom: 1em;
+          font-size: 1.3em;
+          position: relative;
+          transform: translateY(-25%);
+          opacity: 0.6;
+        }
+        .project-features {
+          margin-left: 1.5rem;
+        }
+        .tech-badge {
+          position: absolute;
+          bottom: 0;
+          margin: 1em;
+          padding: 0.5em;
+          font-size: 0.8em;
+          opacity: 0.6;
+        }
+        &:hover {
+          .tooltip {
+            visibility: visible;
+          }
+        }
+      }
+      .page-link {
+        width: 50%;
+        height: 100%;
+        position: relative;
+
+        .project-img {
+          min-height: 100%;
+          max-height: 100%;
+          width: 100%;
+          object-fit: cover;
+          filter: brightness(90%);
+        }
+        &:hover {
+          .tooltip {
+            visibility: visible;
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0 10px 17px -2px rgba(0, 0, 0, 0.4);
+      }
+    }
+    .project-tile.tile-even {
+      grid-column: 1/4;
+      .project-text {
+        float: right;
+      }
+      .project-img-container {
+        float: left;
+      }
+      .tech-badge {
+        right: 0;
+      }
+      &:hover {
+        transform: translateX(3%) scale(1.05);
+      }
+    }
+    .project-tile.tile-odd {
+      grid-column: 3/6;
+      .project-text {
+        float: left;
+      }
+      .project-img-container {
+        float: right;
+      }
+      .tech-badge {
+        left: 0;
+      }
+      &:hover {
+        transform: translateX(-3%) scale(1.05);
+      }
+    }
+    .decor {
+      display: none;
+      grid-column: auto / span 2;
+      position: relative;
+      //display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .decor-wrap {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        font-size: 1.25em;
+        color: $font-color-2;
+        opacity: 0.1;
+
+        .decor-inner {
+          &::after {
+            content: "☁";
+            position: absolute;
+            width: 1.5em;
+            transform: translateY(calc(-0.5em - 4px));
+            background-color: $clr-dark;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .decor.decor-even .decor-wrap {
+      align-self: flex-end;
+      border-right: 4px solid $font-color-2;
+      .decor-inner::after {
+        right: -0.65em;
+      }
+    }
+    .decor.decor-odd .decor-wrap {
+      align-self: flex-start;
+      border-left: 4px solid $font-color-2;
+      .decor-inner::after {
+        left: -0.65em;
+      }
+    }
+  }
+  .img-container {
+    .backdrop {
+      min-height: 200%;
+      filter: contrast(70%) saturate(160%) brightness(65%);
+    }
+  }
+}
+
+.tooltip {
+  top: calc(100% + 0.5em);
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+  padding: 0.5em 0;
+  position: absolute;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.1em;
+  background-color: $clr-dark-translucent;
+  color: $font-color-2;
+  opacity: 0.9;
+  visibility: hidden;
+}

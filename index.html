@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
     <script defer src="portfolio.js"></script>
 </head>
 
@@ -27,10 +27,6 @@
         
     <main>
         <section class="portfolio-section" id="about">
-<!--             <svg height="200" width="100vw">
-                <polygon points="0,0 0,200 1500,200"
-                style="fill:black;" />
-            </svg> -->
             <h3 class="section-header about-title">About</h3>
             <div id="about-blocks" data-about-blocks>
                 <template data-about-block-template>
@@ -50,20 +46,24 @@
             <h3 class="section-header projects-title">Projects</h1>
             <div id="project-grid" data-project-grid>
                 <template data-project-template>
-                    <a class="project-tile" target="_blank" rel="noopener" href="">
-                        <article class="project-text text-block">
+                    <div class="project-tile">
+                        <a class="project-text text-block source-link" target="_blank" rel="noopener" href="">
                             <h4 class="block-header project-header"></h4>
                             <p class="project-desc block-content"><i></i></p>
                             <ul class="project-features block-content"></ul>
                             <div class="tech-badge"><p class="project-tech block-content"></p></div>
-                        </article>
-                        <img class="project-img" src="" alt="" />
-                    </a>
+                            <span class="tooltip">View code</span>
+                        </a>
+                        <a class="project-img-container page-link" target="_blank" rel="noopener" href="">
+                            <img class="project-img" src="" alt="" />
+                            <span class="tooltip">Visit page</span>
+                        </a>
+                    </div>
                     <div class="decor"></div>
                 </template>
             </div>
             <div class="img-container">
-                <img class="backdrop" src="images/dominic-sansotta-CePY8WkO9HU-unsplash.jpg">
+                <img class="backdrop" src="images/barna-kovacs-sAjOjYGt17E-unsplash.jpg">
             </div>
         </section>
     </main>
@@ -80,6 +80,9 @@
             <a class="profile-link" aria-label="Send Email" target="_blank" rel="noopener" href="mailto:bdeering@uoguelph.ca">
                 <img class="profile-img" src="images/Email Icon Black.png" alt="">
             </a>
+        </div>
+        <div class="img-container">
+            <img class="backdrop" src="images/milo-weiler-xmEVBp9qK0c-unsplash.jpg">
         </div>
     </footer>
 </body>
