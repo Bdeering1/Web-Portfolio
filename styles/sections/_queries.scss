@@ -120,12 +120,15 @@
 
       .project-img-container {
         width: 100%;
-        min-height: 300px;
-        max-height: 300px;
+        height: 300px;
+        .project-img {
+          border-radius: $tile-border-radius $tile-border-radius 0 0 !important;
+        }
       }
       .project-text {
         height: fit-content;
         width: 100%;
+        border-radius: 0 0 $tile-border-radius $tile-border-radius !important;
         order: 2;
         .project-header {
           font-size: 24px;

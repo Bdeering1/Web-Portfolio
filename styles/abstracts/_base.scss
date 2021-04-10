@@ -1,13 +1,14 @@
 $clr-light: whitesmoke;
-$clr-light-translucent: rgba(245,245,245,0.8);
+$clr-dark-translucent: rgba(16,16,16,0.6);
+$clr-dark-translucent-2: rgba(16,16,16,0.08);
 $clr-dark: #101010;
-$clr-dark-translucent: rgba(16,16,16,0.1);
 $font-color-1: #0a0a0a;
 $font-color-2: #dddddd;
 $font-family-1: 'Blackjack','Brush Script MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 $font-family-2: 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 $font-family-3: 'Poiret One', 'Helvetica Neue', Helvetica, sans-serif;
 $line-height-1: 1.5em;
+$tile-border-radius: 30px;
 
 @font-face {
   font-family: 'Blackjack';

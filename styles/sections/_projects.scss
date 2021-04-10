@@ -30,12 +30,11 @@
     .project-tile {
       $tile-height: 400px;
       position: relative;
-      border-radius: 4px;
       height: $tile-height;
       min-height: $tile-height;
-      //overflow: hidden;
       transition: transform 1000ms, box-shadow 1000ms;
       will-change: transform;
+      border-radius: $tile-border-radius;
 
       .project-text {
         height: 100%;
@@ -75,7 +74,7 @@
           }
         }
       }
-      .page-link {
+      .project-img-container {
         width: 50%;
         height: 100%;
         position: relative;
@@ -85,7 +84,7 @@
           max-height: 100%;
           width: 100%;
           object-fit: cover;
-          filter: brightness(90%);
+          //filter: brightness(90%);
         }
         &:hover {
           .tooltip {
@@ -101,9 +100,13 @@
       grid-column: 1/4;
       .project-text {
         float: right;
+        border-radius: 0 $tile-border-radius $tile-border-radius 0;
       }
       .project-img-container {
         float: left;
+        .project-img {
+          border-radius: $tile-border-radius 0 0 $tile-border-radius;
+        }
       }
       .tech-badge {
         right: 0;
@@ -116,9 +119,13 @@
       grid-column: 3/6;
       .project-text {
         float: left;
+        border-radius: $tile-border-radius 0 0 $tile-border-radius;
       }
       .project-img-container {
         float: right;
+        .project-img {
+          border-radius: 0 $tile-border-radius $tile-border-radius 0;
+        }
       }
       .tech-badge {
         left: 0;
