@@ -617,10 +617,10 @@ a {
 #profile-links #profile-links-div .profile-link {
   padding: 5px;
   display: inline-block;
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
   font-size: 1rem;
   position: relative;
 }
