@@ -45,7 +45,7 @@ const projects = [
         sourceLink: 'https://github.com/Bdeering1/Visual-Sorting-App',
         image: 'images/Visual Sorting.png',
         title: 'Visual Sorting App',
-        desc: 'sorting algorithm learning tool',
+        desc: 'algorithm learning tool',
         tech: 'React & Redux',
         feat: [
             'Fully responsive and cross browser compatible',

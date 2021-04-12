@@ -1,29 +1,15 @@
 #projects {
-  $projects-gap: 18vh;
+  $projects-gap: 25vh;
   position: relative;
 
   .projects-title {
     color: $clr-light;
     margin-bottom: $projects-gap;
     position: relative;
-    &::after {
-      display: none;
-      $font-height: 1.35em; //makes font appear centered vertically in default position
-      $height-mod: 1; //additional % height added
-      content: "";
-      position: absolute;
-      left: -75%;
-      width: 250%;
-      height: #{$font-height * (1 + $height-mod)};
-      transform: translateY(#{-$font-height * ($height-mod / 2)});
-      border-radius: 200% 100%;
-      border: solid 4px dodgerblue;
-      opacity: 0.3;
-    }
   }
   #project-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-row-gap: $projects-gap;
     position: relative;
 
@@ -84,7 +70,6 @@
           max-height: 100%;
           width: 100%;
           object-fit: cover;
-          //filter: brightness(90%);
         }
         &:hover {
           .tooltip {
@@ -97,7 +82,7 @@
       }
     }
     .project-tile.tile-even {
-      grid-column: 1/4;
+      grid-column: 1/7;
       .project-text {
         float: right;
         border-radius: 0 $tile-border-radius $tile-border-radius 0;
@@ -116,7 +101,7 @@
       }
     }
     .project-tile.tile-odd {
-      grid-column: 3/6;
+      grid-column: 5/11;
       .project-text {
         float: left;
         border-radius: $tile-border-radius 0 0 $tile-border-radius;

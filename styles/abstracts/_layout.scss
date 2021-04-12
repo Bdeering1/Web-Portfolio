@@ -14,7 +14,7 @@
     }
 }
 .portfolio-section {
-    padding: 10vh 5% 20vh 5%;
+    padding: 10vh 5% 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,8 +34,7 @@
     position: relative;
     font-size: 1.5em;
     line-height: $line-height-1;
-    letter-spacing: 1px;
-    font-weight: lighter;
+    font-weight: 200;
 }
 .divider {
     border: none;
@@ -53,7 +52,7 @@
         content: "☁";
         padding: 0 2px;
         position: relative;
-        bottom: calc(0.75em * #{$font-divisor} + 2px);
+        bottom: calc(0.5em * #{$font-divisor} + 3px);//calc(0.75em * #{$font-divisor} + 2px);
         font-size: calc(1em / #{$font-divisor});
         color: crimson;
     }

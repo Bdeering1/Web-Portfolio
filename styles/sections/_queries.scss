@@ -1,14 +1,11 @@
 /* ---------------------- LARGE SIZED UI -------------------------- */
-@media (max-width: 1600px) {
-  #about #about-blocks #block-2 .divider::after {
-    background-color: #e1e4eb;
-  }
+@media (max-width: 1500px) {
   #projects #project-grid {
     .project-tile.tile-even {
-      grid-column: 1/5;
+      grid-column: 1/8;
     }
     .project-tile.tile-odd {
-      grid-column: 2/6;
+      grid-column: 4/11;
     }
     .decor {
       grid-column: auto / span 1;
@@ -17,7 +14,10 @@
 }
 
 /* ---------------------- MEDIUM SIZED UI -------------------------- */
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
+  .portfolio-section {
+    padding: 10vh 10% 20vh;
+  }
   #home .img-container .backdrop {
     transform: translateY(-5%);
   }
@@ -29,12 +29,14 @@
       .about-block {
         padding: 0;
         border: none;
+        background-color: unset;
+
         .block-header {
           margin-bottom: 1em;
           font-size: 32px !important;
         }
         .block-content {
-          padding: 0 20px;
+          padding: 0 5%;
         }
         .two-col {
           flex-direction: row;
@@ -46,11 +48,14 @@
       #block-0 {
         order: 1;
         .divider::after {
-          background-color: #f0f0f0;
+          background-color: #fbfbfb;
         }
       }
       #block-1 .divider::after {
         background-color: #e2e6eb;
+      }
+      #block-2 .divider::after {
+        background-color: #fbfbfb !important;
       }
     }
     .img-container .backdrop {
@@ -58,25 +63,33 @@
     }
   }
 
-  #projects #project-grid {
-    grid-row-gap: 10vh;
-
-    .project-tile {
-      grid-column: 1/6 !important;
-      transition: transform 800ms, box-shadow 800ms;
-
-      &:hover {
-        transform: translateY(-1%) scale(1.02) !important;
-      }
+  #projects  {
+    $projects-gap: 15vh;
+    .projects-title {
+      margin-bottom: $projects-gap * 1.5;
     }
-    .decor {
-      display: none;
+    #project-grid {
+      grid-row-gap: $projects-gap;
+      .project-tile {
+        grid-column: 1/11 !important;
+        transition: transform 800ms, box-shadow 800ms;
+
+        &:hover {
+          transform: translateY(-1%) scale(1.02) !important;
+        }
+      }
+      .decor {
+        display: none;
+      }
     }
   }
 }
 
 /* ---------------------- MOBILE UI -------------------------- */
 @media only screen and (max-width: 768px) {
+  .portfolio-section {
+    padding: 10vh 5% 20vh;
+  }
   #home {
     #title-div {
       transform: translateY(+10%);
@@ -97,6 +110,9 @@
     font-size: 48px;
   }
   #about #about-blocks {
+    .about-block .block-content {
+      padding: 0 2%;
+    }
     #block-0,
     #block-1,
     #block-2 {
@@ -107,46 +123,53 @@
   }
 
   #projects {
-    .projects-title::before {
-      border: none;
+    $projects-gap: 12vh;
+    .projects-title {
+      margin-bottom: $projects-gap * 1.5;
     }
+    /* .projects-title::before {
+      border: none;
+    } */
 
-    #project-grid .project-tile {
-      grid-column: 1/6;
-      display: flex;
-      flex-direction: column;
-      height: unset;
-      text-align: center;
+    #project-grid {
+      grid-row-gap: $projects-gap;
+      .project-tile {
+        grid-column: 1/6;
+        display: flex;
+        flex-direction: column;
+        height: unset;
+        text-align: center;
 
-      .project-img-container {
-        width: 100%;
-        height: 300px;
-        .project-img {
-          border-radius: $tile-border-radius $tile-border-radius 0 0 !important;
+        .project-img-container {
+          width: 100%;
+          height: 300px;
+          .project-img {
+            border-radius: $tile-border-radius $tile-border-radius 0 0 !important;
+          }
         }
-      }
-      .project-text {
-        height: fit-content;
-        width: 100%;
-        border-radius: 0 0 $tile-border-radius $tile-border-radius !important;
-        order: 2;
-        .project-header {
-          font-size: 24px;
-          margin-bottom: 1.25em;
+        .project-text {
+          height: fit-content;
+          width: 100%;
+          border-radius: 0 0 $tile-border-radius $tile-border-radius !important;
+          order: 2;
+          .project-header {
+            font-size: 24px;
+            margin-bottom: 1.25em;
+          }
+          .project-desc {
+            display: none;
+          }
+          .project-features {
+            display: none;
+          }
         }
-        .project-desc {
-          display: none;
+        .tech-badge {
+          left: unset !important;
+          right: 0 !important;
         }
-        .project-features {
-          display: none;
+        &:hover {
+          transform: none !important;
         }
-      }
-      .tech-badge {
-        left: unset !important;
-        right: 0 !important;
-      }
-      &:hover {
-        transform: none !important;
       }
     }
   }
