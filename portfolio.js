@@ -28,12 +28,14 @@ const about = [
         content: [
             'JavaScript Algorithms and Data Structures',
             'Front End Libraries',
-            'Responsive Web Design'
+            'Responsive Web Design',
+            'SQL'
         ],
         tags: [
             'FreeCodeCamp',
             'FreeCodeCamp',
-            'FreeCodeCamp'
+            'FreeCodeCamp',
+            'SoloLearn'
         ]
     },
 ]
@@ -48,8 +50,8 @@ const projects = [
         desc: 'algorithm learning tool',
         tech: 'React & Redux',
         feat: [
-            'Fully responsive and cross browser compatible',
-            'Modular and scalable design'
+            'Modular and scalable design',
+            'Centralized state management and asynchronous actions'
         ]
     },
     {
@@ -72,8 +74,8 @@ const projects = [
         desc: 'typing practice tool',
         tech: 'React & Bootstrap',
         feat: [
-            'Responsize design using bootstrap framework',
-            'demonstrates asynchronous methods and API consumption'
+            'Bootstrap layouts, components, and custom styles',
+            'API consumption'
         ]
     },
     {
