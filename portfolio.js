@@ -7,6 +7,8 @@ let projectNodes = [];
 let prevMobileQuery = false;
 let prevMediumQuery = false;
 
+const devMode = true;
+
 /* About Section Data */
 const about = [
     {
@@ -101,10 +103,12 @@ const projects = [
 window.onload = () => {
     /* User always starts from top of page */
     //https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
+    if (!devMode) {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0,0);
     }
-    window.scrollTo(0,0);
 
     /* Sending about section info to DOM */
     populateAbout();

@@ -23,6 +23,7 @@
       opacity: 0;
       z-index: 1;
       will-change: filter, opacity;
+      text-shadow: 0 10px 2px $clr-dark-shadow;
     }
     #welcome-subtitle {
       margin: 0;
@@ -35,6 +36,7 @@
       animation-fill-mode: forwards;
       opacity: 0;
       will-change: transform, filter, opacity;
+      text-shadow: 0 2px 2px $clr-dark-shadow;
     }
   }
   .img-container {

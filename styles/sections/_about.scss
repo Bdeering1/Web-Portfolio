@@ -5,17 +5,7 @@
   .about-title {
     position: relative;
     margin-bottom: 12vh;
-
-    &::after {
-      content: "";
-      width: 150%;
-      height: 3px;
-      position: absolute;
-      left: -25%;
-      transform: translateY($line-height-1);
-      background-color: crimson;
-      opacity: 0.5;
-    }
+    text-shadow: 0 4px 2px $clr-accent-2-shadow;
   }
   #about-blocks {
     max-width: 1440px;
@@ -27,8 +17,8 @@
       $header-font-size: calc(1.4em + 0.6vw);
       position: relative;
       padding: 1em;
-      border: 2px solid $clr-dark-translucent-2;
       border-radius: 4px;
+      box-shadow: 0 2px 6px 4px $clr-dark-shadow-2;
       background-color: rgba(254,254,254,0.4);
 
       .block-header {
