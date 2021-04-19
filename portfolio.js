@@ -49,8 +49,8 @@ const projects = [
     {
         pageLink: 'https://bdeering1.github.io/Visual-Sorting-App',
         sourceLink: 'https://github.com/Bdeering1/Visual-Sorting-App',
-        image: 'images/Visual Sorting.png',
-        imgSmall: 'images/Visual Sorting Small.png',
+        image: 'assets/images/Visual Sorting.png',
+        imgSmall: 'assets/images/Visual Sorting Small.png',
         title: 'Visual Sorting App',
         desc: 'algorithm learning tool',
         tech: 'React & Redux',
@@ -62,7 +62,7 @@ const projects = [
     {
         pageLink: 'https://bdeering1.github.io/To-Do-List/',
         sourceLink: 'https://github.com/Bdeering1/To-Do-List',
-        image: 'images/To Do List.png',
+        image: 'assets/images/To Do List.png',
         title: 'To Do List',
         desc: 'personal organization tool',
         tech: 'Javascript & SASS',
@@ -74,8 +74,8 @@ const projects = [
     {
         pageLink: 'https://bdeering1.github.io/Speed-Typing-App/',
         sourceLink: 'https://github.com/Bdeering1/Speed-Typing-App',
-        image: 'images/Speed Typing.png',
-        imgSmall: 'images/Speed Typing Small.png',
+        image: 'assets/images/Speed Typing.png',
+        imgSmall: 'assets/images/Speed Typing Small.png',
         title: 'Speed Typing',
         desc: 'typing practice tool',
         tech: 'React & Bootstrap',
@@ -87,7 +87,7 @@ const projects = [
     {
         pageLink: 'https://codepen.io/bdeering1/full/QWKxemq',
         sourceLink: 'https://codepen.io/bdeering1/pen/QWKxemq',
-        image: 'images/Calculator.png',
+        image: 'assets/images/Calculator.png',
         title: 'Calculator',
         desc: 'virtual calculator app',
         tech: 'React & SASS',

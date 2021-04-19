@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap");
 @font-face {
   font-family: 'Blackjack';
-  src: url("../fonts/blackjack.woff2") format("woff2"), url("../fonts/blackjack.woff") format("woff");
+  src: url("../assets/fonts/blackjack.woff2") format("woff2"), url("../assets/fonts/blackjack.woff") format("woff");
   font-display: swap;
 }
 
