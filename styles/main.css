@@ -55,7 +55,7 @@ a {
   max-width: 100%;
   position: absolute;
   top: 0;
-  z-index: -1;
+  z-index: -99;
   overflow: hidden;
 }
 
@@ -414,7 +414,7 @@ a {
   padding: 0 1.5em 1.5em;
   position: relative;
   color: #dddddd;
-  background-color: rgba(16, 16, 16, 0.6);
+  background-color: rgba(16, 16, 16, 0.7);
 }
 
 #projects #project-grid .project-tile .project-text .project-header {
@@ -446,7 +446,7 @@ a {
   opacity: 0.6;
 }
 
-#projects #project-grid .project-tile .project-text:hover .tooltip {
+#projects #project-grid .project-tile .project-text:hover .project-tooltip {
   visibility: visible;
 }
 
@@ -464,7 +464,7 @@ a {
      object-fit: cover;
 }
 
-#projects #project-grid .project-tile .project-img-container:hover .tooltip {
+#projects #project-grid .project-tile .project-img-container:hover .project-tooltip {
   visibility: visible;
 }
 
@@ -588,11 +588,11 @@ a {
 
 #projects .img-container .backdrop {
   min-height: 200%;
-  -webkit-filter: contrast(70%) saturate(160%) brightness(65%);
-          filter: contrast(70%) saturate(160%) brightness(65%);
+  -webkit-filter: contrast(70%) saturate(120%) brightness(65%);
+          filter: contrast(70%) saturate(120%) brightness(65%);
 }
 
-.tooltip {
+.project-tooltip {
   top: calc(100% + 0.5em);
   left: 50%;
   width: 120px;
@@ -602,24 +602,23 @@ a {
   border-radius: 6px;
   text-align: center;
   font-size: 1.1em;
-  background-color: rgba(16, 16, 16, 0.6);
+  background-color: rgba(16, 16, 16, 0.7);
   color: #dddddd;
   opacity: 0.9;
   visibility: hidden;
 }
 
 #profile-links {
-  padding: 5vh 15vw;
   display: -ms-grid;
   display: grid;
   text-align: center;
   position: relative;
+  padding-bottom: 12.5vh;
 }
 
 #profile-links .profile-links-title {
-  margin-bottom: 0.5em;
-  font-size: calc(2vw + 2rem);
-  text-shadow: 0 4px 4px rgba(16, 16, 16, 0.15);
+  margin-bottom: 10vh;
+  text-shadow: 0 4px 2px rgba(220, 20, 60, 0.5);
 }
 
 #profile-links #profile-links-div {
@@ -635,24 +634,60 @@ a {
 }
 
 #profile-links #profile-links-div .profile-link {
-  padding: 5px;
+  padding: 10px;
   display: inline-block;
   -webkit-transition: -webkit-transform 600ms;
   transition: -webkit-transform 600ms;
   transition: transform 600ms;
   transition: transform 600ms, -webkit-transform 600ms;
-  font-size: 1rem;
   position: relative;
 }
 
 #profile-links #profile-links-div .profile-link .profile-img {
-  width: calc(calc(2vw + 2rem) * 1.25);
-  height: calc(calc(2vw + 2rem) * 1.25);
+  width: calc(calc(5vw + 1rem) * 0.9);
+  height: calc(calc(5vw + 1rem) * 0.9);
+  z-index: 1;
+}
+
+#profile-links #profile-links-div .profile-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(calc(5vw + 1rem) * 0.9);
+  height: calc(calc(5vw + 1rem) * 0.9);
+  margin: 10px;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: rgba(220, 20, 60, 0.5);
 }
 
 #profile-links #profile-links-div .profile-link:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+#profile-links #profile-links-div .profile-link:hover .footer-tooltip {
+  visibility: visible;
+}
+
+.footer-tooltip {
+  top: calc(90% + 0.5em);
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+  padding: 0.5em 0;
+  position: absolute;
+  border-radius: 6px;
+  text-align: center;
+  background-color: rgba(16, 16, 16, 0.15);
+  font-size: 1.1em;
+  opacity: 0.9;
+  visibility: hidden;
+}
+
+.tooltip-tall {
+  top: 100%;
 }
 
 /* ---------------------- LARGE SIZED UI -------------------------- */
@@ -840,7 +875,7 @@ a {
     -webkit-transform: none !important;
             transform: none !important;
   }
-  .tooltip {
+  .project-tooltip {
     display: none;
   }
   #profile-links {

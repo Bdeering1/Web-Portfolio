@@ -1,14 +1,12 @@
 #profile-links {
-  $em-size: calc(2vw + 2rem);
-  padding: 5vh 15vw;
   display: grid;
   text-align: center;
   position: relative;
+  padding-bottom: 12.5vh;
 
   .profile-links-title {
-    margin-bottom: 0.5em;
-    font-size: $em-size;
-    text-shadow: 0 4px 4px $clr-dark-shadow-2;
+    margin-bottom: 10vh;
+    text-shadow: 0 4px 2px $clr-accent-2-shadow;
   }
 
   #profile-links-div {
@@ -17,19 +15,56 @@
     align-items: center;
 
     .profile-link {
-      padding: 5px;
+      $img-size: calc(calc(5vw + 1rem) * 0.9);
+      padding: 10px;
       display: inline-block;
       transition: transform 600ms;
-      font-size: 1rem;
       position: relative;
 
       .profile-img {
-        width: calc(#{$em-size} * 1.25);
-        height: calc(#{$em-size} * 1.25);
+        width: $img-size;
+        height: $img-size;
+        z-index: 1;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $img-size;
+        height: $img-size;
+        margin: 10px;
+        z-index: -1;
+        border-radius: 50%;
+        background-color: $clr-accent-2-shadow;
       }
     }
     .profile-link:hover {
       transform: scale(1.1);
+      .footer-tooltip {
+        visibility: visible;
+      }
     }
   }
+}
+
+.footer-tooltip {
+  top: calc(90% + 0.5em);
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+  padding: 0.5em 0;
+  position: absolute;
+  border-radius: 6px;
+  text-align: center;
+  background-color: $clr-dark-shadow-2;
+  //color: $clr-accent-2;
+  font-size: 1.1em;
+  opacity: 0.9;
+  visibility: hidden;
+}
+
+.tooltip-tall {
+  top: 100%;
 }

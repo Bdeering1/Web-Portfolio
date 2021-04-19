@@ -7,7 +7,7 @@ let projectNodes = [];
 let prevMobileQuery = false;
 let prevMediumQuery = false;
 
-const devMode = false;
+const devMode = true;
 
 /* About Section Data */
 const about = [
