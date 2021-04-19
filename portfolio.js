@@ -3,6 +3,10 @@ const aboutBlockTemplate = document.querySelector('[data-about-block-template]')
 const projectGrid = document.querySelector('[data-project-grid]');
 const projectTemplate = document.querySelector('[data-project-template]');
 
+let projectNodes = [];
+let prevMobileQuery = false;
+let prevMediumQuery = false;
+
 /* About Section Data */
 const about = [
     {
@@ -46,6 +50,7 @@ const projects = [
         pageLink: 'https://bdeering1.github.io/Visual-Sorting-App',
         sourceLink: 'https://github.com/Bdeering1/Visual-Sorting-App',
         image: 'images/Visual Sorting.png',
+        imgSmall: 'images/Visual Sorting Small.png',
         title: 'Visual Sorting App',
         desc: 'algorithm learning tool',
         tech: 'React & Redux',
@@ -70,6 +75,7 @@ const projects = [
         pageLink: 'https://bdeering1.github.io/Speed-Typing-App/',
         sourceLink: 'https://github.com/Bdeering1/Speed-Typing-App',
         image: 'images/Speed Typing.png',
+        imgSmall: 'images/Speed Typing Small.png',
         title: 'Speed Typing',
         desc: 'typing practice tool',
         tech: 'React & Bootstrap',
@@ -93,12 +99,23 @@ const projects = [
 ]
 
 window.onload = () => {
+    /* User always starts from top of page */
     //https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
-/*     if ('scrollRestoration' in history) {
+    if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0,0); */
+    window.scrollTo(0,0);
+
     /* Sending about section info to DOM */
+    populateAbout();
+
+    /* Sending projects section info to DOM */
+    populateProjects();
+
+    window.addEventListener('resize', updateQuery);
+}
+
+function populateAbout() {
     about.forEach((block, idx) => {
         const template = document.importNode(aboutBlockTemplate.content, true);
         const aboutBlock = template.querySelector('.about-block');
@@ -125,7 +142,9 @@ window.onload = () => {
         }
         aboutBlocks.appendChild(aboutBlock);
     });
-    /* Sending projects section info to DOM */
+}
+
+function populateProjects() {
     projects.forEach((proj, idx) => {
         const template = document.importNode(projectTemplate.content, true);
         const projectTile = template.querySelector('.project-tile');
@@ -167,7 +186,43 @@ window.onload = () => {
             projectGrid.appendChild(projectTile);
             projectGrid.appendChild(decor);
         }
+        projectNodes.push(projectTile);
     });
+}
+
+function updateQuery() {
+    let mobileQuery = window.matchMedia("(max-width: 768px)").matches;
+    if (mobileQuery) {
+        prevMobileQuery = true;
+        projects.forEach((proj, idx) => {
+            const text = projectNodes[idx].querySelector('.source-link');
+            text.setAttribute('href', proj.pageLink);
+        })
+    } else if (prevMobileQuery === true) {
+        prevMobileQuery = false;
+        projects.forEach((proj, idx) => {
+            const text = projectNodes[idx].querySelector('.source-link');
+            text.setAttribute('href', proj.sourceLink);
+        })
+    }
+    let mediumQuery = window.matchMedia("(max-width: 1200px)").matches;
+    if (mediumQuery) {
+        prevMediumQuery = true;
+        projects.forEach((proj, idx) => {
+            if (proj.imgSmall != undefined) {
+                const image = projectNodes[idx].querySelector('.project-img');
+                image.setAttribute('src', proj.imgSmall);
+            }
+        })
+    } else if (prevMediumQuery === true) {
+        prevMediumQuery = false;
+        projects.forEach((proj, idx) => {
+            if (proj.imgSmall != undefined) {
+                const image = projectNodes[idx].querySelector('.project-img');
+                image.setAttribute('src', proj.image);
+            }
+        })
+    }
 }
 
 /* Autoscroll to about and projects sections */
