@@ -162,10 +162,19 @@ a {
           animation: fadeInTitle 2000ms linear 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  -webkit-transition: -webkit-transform 800ms;
+  transition: -webkit-transform 800ms;
+  transition: transform 800ms;
+  transition: transform 800ms, -webkit-transform 800ms;
   opacity: 0;
   z-index: 1;
   will-change: filter, opacity;
   text-shadow: 0 10px 2px rgba(16, 16, 16, 0.4);
+}
+
+#home #title-div #welcome-title:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #home #title-div #welcome-subtitle {
@@ -179,9 +188,18 @@ a {
           animation: fadeInSubtitle 1500ms linear 2000ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  -webkit-transition: -webkit-transform 800ms;
+  transition: -webkit-transform 800ms;
+  transition: transform 800ms;
+  transition: transform 800ms, -webkit-transform 800ms;
   opacity: 0;
-  will-change: transform, filter, opacity;
+  will-change: filter, opacity;
   text-shadow: 0 2px 2px rgba(16, 16, 16, 0.4);
+}
+
+#home #title-div #welcome-subtitle:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #home .img-container {
@@ -228,8 +246,6 @@ a {
 
 @-webkit-keyframes fadeInSubtitle {
   0% {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
     -webkit-filter: blur(5px);
             filter: blur(5px);
     opacity: 0;
@@ -238,18 +254,12 @@ a {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-filter: blur(0);
-            filter: blur(0);
     opacity: 1;
   }
 }
 
 @keyframes fadeInSubtitle {
   0% {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
     -webkit-filter: blur(5px);
             filter: blur(5px);
     opacity: 0;
@@ -258,10 +268,6 @@ a {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-filter: blur(0);
-            filter: blur(0);
     opacity: 1;
   }
 }
@@ -613,6 +619,7 @@ a {
 #profile-links .profile-links-title {
   margin-bottom: 0.5em;
   font-size: calc(2vw + 2rem);
+  text-shadow: 0 4px 4px rgba(16, 16, 16, 0.15);
 }
 
 #profile-links #profile-links-div {
