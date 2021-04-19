@@ -7,8 +7,15 @@ To view, check out my Github Pages site:
 &emsp;&emsp;https://bdeering1.github.io/Web-Portfolio/  
 \
 \
-*Image credits:*
+*Images:*
 
 Drew Beamer - https://unsplash.com/@drew_beamer  
 Milo Weiler - https://unsplash.com/@miloweiler  
-Barna Kovaccs - https://unsplash.com/@barnikakovacs
+Barna Kovaccs - https://unsplash.com/@barnikakovacs   
+\
+*Icons:*
+
+Code Icon - http://simpleicon.com/code-optimization.html  
+Github Icon - https://www.vippng.com/preview/hRRJmwT_png-file-github-icon-black-and-white/  
+LinkedIn Icon - https://www.pngwing.com/en/free-png-pbgvh  
+Mail - https://www.pngegg.com/en/png-zgobv  
