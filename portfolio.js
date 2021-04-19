@@ -65,6 +65,18 @@ const projects = [
         ]
     },
     {
+        pageLink: 'https://bdeering1.github.io/Speed-Typing-App/',
+        sourceLink: 'https://github.com/Bdeering1/Speed-Typing-App',
+        image: 'images/Speed Typing App.png',
+        title: 'Speed Typing App',
+        desc: 'typing practice tool',
+        tech: 'React & Bootstrap',
+        feat: [
+            'Responsize design using bootstrap framework',
+            'demonstrates asynchronous methods and API consumption'
+        ]
+    },
+    {
         pageLink: 'https://codepen.io/bdeering1/full/QWKxemq',
         sourceLink: 'https://codepen.io/bdeering1/pen/QWKxemq',
         image: 'images/Calculator.png',
