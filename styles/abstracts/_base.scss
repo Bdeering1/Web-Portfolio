@@ -15,18 +15,6 @@ $font-family-3: 'Josefin Sans', 'Helvetica Neue', Helvetica, sans-serif;
 $line-height-1: 1.5em;
 $tile-border-radius: 30px;
 
-@font-face {
-  font-family: 'Blackjack';
-  src: url('../assets/fonts/blackjack.woff2') format('woff2'),
-       url('../assets/fonts/blackjack.woff') format('woff');
-       font-display: swap;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
-
-
-
 *,
 *::before,
 *::after {

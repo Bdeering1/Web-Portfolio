@@ -110,13 +110,22 @@ window.onload = () => {
         window.scrollTo(0,0);
     }
 
-    /* Sending about section info to DOM */
     populateAbout();
-
-    /* Sending projects section info to DOM */
     populateProjects();
 
+    updateQuery();
     window.addEventListener('resize', updateQuery);
+    
+    loadCSS();
+}
+
+function loadCSS() { 
+    //https://css-tricks.com/annotating-critical-css/
+    let l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.type = 'text/css';
+    l.href = 'styles/onload.css';
+    document.getElementsByTagName('head')[0].appendChild(l)
 }
 
 function populateAbout() {

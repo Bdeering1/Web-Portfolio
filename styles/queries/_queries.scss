@@ -127,9 +127,6 @@
     .projects-title {
       margin-bottom: $projects-gap * 1.5;
     }
-    /* .projects-title::before {
-      border: none;
-    } */
 
     #project-grid {
       grid-row-gap: $projects-gap;
@@ -183,11 +180,7 @@
     #profile-links-div {
       .profile-link {
         animation-name: none;
-        
-        .profile-img {
-          width: 60px;
-          height: 60px;
-        }
+        $img-size: 60px;
       }
       .profile-link:hover {
         animation-name: none;
