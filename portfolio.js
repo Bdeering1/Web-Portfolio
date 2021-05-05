@@ -58,7 +58,7 @@ const projects = [
         tech: 'React & Redux',
         feat: [
             'Modular and scalable design',
-            'Centralized state management and asynchronous actions'
+            'Centralized state management and AJAX methods'
         ]
     },
     {
@@ -84,18 +84,6 @@ const projects = [
         feat: [
             'Bootstrap layouts, components, and custom styles',
             'API consumption'
-        ]
-    },
-    {
-        pageLink: 'https://codepen.io/bdeering1/full/QWKxemq',
-        sourceLink: 'https://codepen.io/bdeering1/pen/QWKxemq',
-        image: 'assets/images/Calculator.png',
-        title: 'Calculator',
-        desc: 'virtual calculator app',
-        tech: 'React & SASS',
-        feat: [
-            'Responsize design',
-            'Component functions and state manipulation'
         ]
     }
 ]
