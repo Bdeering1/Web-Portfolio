@@ -1,4 +1,9 @@
 # Web Portfolio
+
+**this is my old portfolio, for an updated version please refer to: https://github.com/Bdeering1/Portfolio
+\
+\
+\
 Hey I'm Bryn, an aspiring web developer! This is my portfolio where I show off some of my notable projects. 
 \
 \
